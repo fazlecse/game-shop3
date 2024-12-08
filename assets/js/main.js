@@ -211,7 +211,7 @@ $(document).ready(function () {
 
     // Countdown start
     if ($('.countdown').length) {
-        $('.countdown').countdown('2024/12/31', function (event) {
+        $('.countdown').countdown('2025/06/31', function (event) {
             $(this).html(event.strftime('<div class="single-countdown"><h5>%D</h5><span>Days</span> </div> <div class="single-countdown"><h5>%H</h5><span>Hours</span> </div> <div class="single-countdown"><h5>%M</h5><span>Minutes</span> </div> <div class="single-countdown"><h5>%S</h5><span>Second</span> </div>'));
         });
     }

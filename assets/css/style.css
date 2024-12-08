@@ -35,18 +35,6 @@ Version       : 1.0
 25. Blog details section start
 26. Pagination section start
 27. Error section start
-
-
-11. Blog section start
-13. Banner section start
-14. Docs banner section start
-15. Copyright section start
-16. Banner section start
-17. Contact section start
-18. Login Signup section start
-19. Blog details section start
-20. Pagination section start
-21. Error section start
 ----------------------------------------------*/
 /*----------------------------------------------
 Typography 
@@ -57,7 +45,8 @@ Typography
   --body-font: "Urbanist", sans-serif;
   --primary-color: 111, 79, 242;
   --body-color: #7d7d7d;
-  --heading-color: 5, 11, 32;
+  --body-color: #403e3e;
+  --heading-color: 41, 45, 50;
   --black: 0, 0, 0;
   --btn-hover-bg: hsl(var(--base)/.8);
   --btn-hover-bg2: #332f8c;
@@ -77,7 +66,7 @@ Typography
   --input-color2: #ffffff;
   --bg-color1: #ffffff;
   --bg-color2: rgb(var(--primary-color), 0.05);
-  --bg-color3: #2F3448;
+  --bg-color3: rgb(var(--primary-color), 0.1);
   --bg-color4: #242C50;
   --border-color1: rgba(231, 234, 243, .7);
   --border-color2: rgba(140, 152, 164, .25);
@@ -356,7 +345,6 @@ option {
   background-color: var(--input-color);
   border: 1px solid var(--border-color1);
   height: 45px;
-  color: rgb(var(--white));
 }
 .form-control::-moz-placeholder, .form-select::-moz-placeholder {
   text-transform: capitalize;
@@ -1966,7 +1954,7 @@ Cmn tab section start
 .cmn-tabs .nav-pills .nav-link {
   padding: 8px 20px;
   text-transform: capitalize;
-  color: rgb(var(--white));
+  color: rgb(var(--heading-color));
   font-family: var(--heading-font);
   width: 100%;
   border-radius: 9999px;
@@ -1974,6 +1962,7 @@ Cmn tab section start
   display: flex;
   align-items: center;
   gap: 7px;
+  font-weight: 500;
 }
 
 .cmn-tabs .nav-pills .nav-link.active,
@@ -2100,9 +2089,10 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(var(--white));
+  color: rgb(var(--primary-color));
   border: 1px solid var(--border-color1);
   border-radius: 8px;
+  background-color: var(--bg-color1);
 }
 .social-box li a:hover {
   background-color: rgb(var(--primary-color));
@@ -2576,6 +2566,7 @@ hr.divider:after {
   text-transform: capitalize;
   font-size: 16px;
   background-color: var(--bg-color2);
+  border-radius: 9999px;
 }
 
 .nice-select .option {
@@ -2588,7 +2579,6 @@ hr.divider:after {
 
 .nice-select .list {
   min-width: 200px;
-  background-color: var(--bg-color3);
 }
 
 .nice-select .option:hover,
@@ -2655,12 +2645,16 @@ hr.divider:after {
   transition: var(--transition);
   border-radius: 40px;
   font-weight: 500;
+  color: rgb(var(--heading-color));
 }
 .checkbox-categories-area .category-link:hover {
   background-color: rgb(var(--primary-color), 0.1);
 }
 .checkbox-categories-area .category-link:not(:last-child) {
   margin-bottom: 10px;
+}
+.checkbox-categories-area .category-link i {
+  color: rgb(var(--primary-color));
 }
 .checkbox-categories-area .form-check {
   margin: 15px 0;
@@ -4400,6 +4394,8 @@ Padding bottom
   height: 30px;
   font-size: 13px;
   border-radius: 50%;
+  color: rgb(var(--white));
+  background-color: rgb(var(--primary-color));
 }
 .header-top-section .top-bar .social-box .cmn-btn {
   padding: 3px 10px;
@@ -4438,6 +4434,9 @@ Padding bottom
 }
 .cusotm-navbar.active .desktop-view .nav-link {
   color: rgb(var(--white));
+}
+.cusotm-navbar.active .desktop-view .mega-menu .nav-link {
+  color: rgb(var(--heading-color));
 }
 .cusotm-navbar.active .dropdown-toggle i {
   color: rgb(var(--white));
@@ -4507,6 +4506,7 @@ Padding bottom
   z-index: 2;
   padding: 20px;
   scale: 0;
+  box-shadow: var(--shadow1);
 }
 
 .main-menu ul li:hover .mega-menu {
@@ -4953,6 +4953,11 @@ Flash deal section end
 .flash-deal-section {
   background-color: var(--bg-color2);
 }
+.flash-deal-section .left-side {
+  background-color: var(--bg-color2);
+  padding: 10px;
+  border-radius: 10px;
+}
 .flash-deal-section .left-side .img-box {
   max-width: 200px;
   margin: 0 auto;
@@ -4973,7 +4978,7 @@ Flash deal section end
 .flash-deal-section .countdown h5 {
   font-size: 36px;
   padding: 15px;
-  background-color: var(--bg-color3);
+  background-color: var(--bg-color1);
   border-radius: 12px;
 }
 .flash-deal-section .product-box .text-box .price .promo-price {
@@ -4990,6 +4995,7 @@ Flash deal section end
 .product-box {
   padding: 10px;
   display: flex;
+  flex-direction: column;
   border-radius: 8px;
   background-color: var(--bg-color1);
   border: 1px solid var(--border-color1);
@@ -5008,11 +5014,11 @@ Flash deal section end
   transform: scale(1.03);
 }
 .product-box .img-box {
-  max-width: 110px;
-  min-width: 110px;
-  height: 120px;
+  width: 100%;
+  height: 150px;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color1);
 }
 .product-box .img-box img {
   width: 100%;
@@ -5021,11 +5027,13 @@ Flash deal section end
   border-radius: 5px;
 }
 .product-box .text-box {
-  font-size: 12px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.product-box .text-box .review {
+  font-size: 14px;
 }
 .product-box .text-box .title {
   font-size: 16px;
@@ -5040,7 +5048,7 @@ Flash deal section end
 }
 .product-box .text-box .name {
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
@@ -5059,23 +5067,26 @@ Flash deal section end
 }
 .product-box .text-box .price .promo-price {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
+  color: rgb(var(--heading-color));
 }
 .product-box .text-box .price .promo-price .number {
   color: rgb(var(--white));
 }
 .product-box .text-box .price .discount {
-  font-size: 12px;
+  font-size: 14px;
   background-color: rgb(var(--primary-color), 0.1);
   padding: 2px 10px;
   border-radius: 3px;
   color: rgb(var(--heading-color));
+  color: rgb(var(--primary-color));
+  font-weight: 500;
 }
 .product-box .text-box .price .sell {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 14px;
+  font-size: 15px;
 }
 .product-box .text-box .price .line-through {
   text-decoration: line-through;
@@ -5109,9 +5120,6 @@ Flash deal section end
   height: 100%;
   padding: 12px;
 }
-.product-box2:hover {
-  color: rgb(var(--white));
-}
 .product-box2:hover .img-box img {
   transform: scale(1.03);
 }
@@ -5143,7 +5151,7 @@ Flash deal section end
 .product-box2 .text-box .title {
   font-size: 16px;
   font-weight: 600;
-  color: rgb(var(--white));
+  color: rgb(var(--heading-color));
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
@@ -5189,7 +5197,7 @@ Flash deal section end
 .product-box2 .price .promo-price {
   font-weight: 700;
   font-size: 16px;
-  color: rgb(var(--white));
+  color: rgb(var(--heading-color));
 }
 .product-box2 .price .line-through {
   text-decoration: line-through;
@@ -5305,6 +5313,10 @@ Flash deal section end
   display: -webkit-box;
   -webkit-line-clamp: 1;
   line-clamp: 1;
+  color: rgb(var(--heading-color));
+}
+.category-box .text-box .title:hover {
+  color: rgb(var(--primary-color));
 }
 
 /*----------------------------------------------
@@ -5470,7 +5482,7 @@ Testimonial end
 
 .blog-box {
   border-radius: 16px;
-  background-color: var(--bg-color3);
+  background-color: var(--bg-color2);
   padding: 20px;
 }
 .blog-box:hover .img-box img {
@@ -5525,12 +5537,9 @@ Testimonial end
   gap: 5px;
 }
 .meta .item.tag {
-  background-color: rgb(var(--primary-color), 0.5);
+  background-color: var(--bg-color3);
   padding: 2px 10px;
   border-radius: 4px;
-}
-.meta .item.tag:hover a {
-  color: rgb(var(--white));
 }
 
 .rtl .meta .item:not(:last-child)::after {
@@ -5893,106 +5902,49 @@ Author section end
 /*----------------------------------------------
 19. Newsletter section start
 ----------------------------------------------*/
-.newsletter-section {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 50px;
-}
-.newsletter-section .content-area {
-  font-family: var(--heading-font);
-  color: hsl(var(--white));
-  line-height: 40px;
-  font-weight: 500;
-}
-.newsletter-section .content-area .subscribe-normal-text {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 0;
-  color: hsl(var(--white));
-}
-.newsletter-section .newsletter-form {
+.newsletter-form {
+  margin-top: 40px;
   position: relative;
   display: flex;
   align-items: center;
 }
-.newsletter-section .newsletter-form .form-control {
-  border-radius: 9999px;
-  height: 55px;
-  background-color: var(--bg-color1);
-  padding: 10px 165px 10px 20px;
-  border-color: transparent;
+.newsletter-form .form-control {
+  border-radius: 50px;
+  height: 50px;
+  padding: 10px 50px 10px 10px;
+  border-color: var(--border-color1);
+  box-shadow: var(--shadow1);
 }
-.newsletter-section .newsletter-form .form-control:focus {
+.newsletter-form .form-control:focus {
   border-color: rgb(var(--primary-color));
 }
-.newsletter-section .newsletter-form .subscribe-btn {
+.newsletter-form .subscribe-btn {
   transition: var(--transition);
   position: absolute;
   right: 5px;
   background-color: rgb(var(--primary-color));
   height: calc(100% - 10px);
-  border-radius: 9999px;
-  padding: 10px 40px;
+  width: 40px;
+  border-radius: 50%;
   color: rgb(var(--white));
   display: flex;
   align-items: center;
-  font-weight: 600;
+  justify-content: center;
 }
-.newsletter-section .newsletter-form .subscribe-btn:hover {
+.newsletter-form .subscribe-btn:hover {
   background-color: rgb(var(--primary-color), 0.8);
-  color: var(--white);
+  color: rgb(var(--white));
 }
 
-.newsletter-section-inner {
-  background-color: var(--bg-color3);
-  padding: 50px 40px;
-  border-radius: 15px;
-  margin: 0 auto;
+.rtl .newsletter-form .form-control {
+  padding: 10px 10px 10px 50px;
 }
-
-@media (max-width: 991px) {
-  .newsletter-section .content-area .subscribe-small-text {
-    font-size: 20px;
-  }
-  .newsletter-section .content-area .subscribe-normal-text {
-    font-size: 34px;
-  }
-  .newsletter-section .newsletter-form .subscribe-btn {
-    padding: 10px 15px;
-  }
-  .newsletter-section .newsletter-form .form-control {
-    padding: 10px 110px 10px 10px;
-  }
-}
-@media (max-width: 767px) {
-  .newsletter-section .content-area {
-    text-align: center;
-  }
-}
-@media (max-width: 575px) {
-  .newsletter-section .newsletter-section-inner {
-    padding: 20px;
-  }
-  .newsletter-section .newsletter-form .form-control {
-    height: 50px;
-  }
-}
-.rtl .newsletter-section .newsletter-form .form-control {
-  padding: 10px 20px 10px 165px;
-}
-.rtl .newsletter-section .newsletter-form .subscribe-btn {
+.rtl .newsletter-form .subscribe-btn {
   left: 5px;
   right: auto;
 }
-@media (max-width: 991px) {
-  .rtl .newsletter-section .newsletter-form .form-control {
-    padding: 10px 10px 10px 110px;
-  }
-}
-@media (max-width: 575px) {
-  .rtl .newsletter-section .newsletter-form .subscribe-btn {
-    left: 3px;
-  }
+.rtl .newsletter-form .subscribe-btn i {
+  transform: rotatey(180deg);
 }
 
 /*----------------------------------------------
@@ -6014,7 +5966,7 @@ Newsletter end
   text-transform: capitalize;
   font-size: 20px;
   font-family: var(--heading-font);
-  color: var(--white);
+  color: rgb(var(--heading-color));
 }
 
 .footer-widget .widget-logo {
@@ -6133,6 +6085,10 @@ Copyright end
   flex-direction: column;
   justify-content: end;
   height: 100%;
+  color: rgb(var(--white));
+}
+.banner-section .text-box .title {
+  color: rgb(var(--white));
 }
 
 .breadcrumb-area {
@@ -6646,7 +6602,7 @@ Blog details end
   width: 40px;
   height: 40px;
   border-radius: 8px !important;
-  color: rgb(var(--white));
+  color: rgb(var(--heading-color));
   background-color: var(--bg-color3);
   display: flex;
   justify-content: center;
@@ -6784,11 +6740,10 @@ Product details section start
   width: auto;
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--border-color1);
   border-radius: 9999px;
   transition: var(--transition);
-  color: rgb(var(--white));
-  background-color: var(--bg-color3);
+  border: 1px solid var(--border-color1);
+  background-color: var(--bg-color1);
 }
 
 .item-count:hover {
@@ -6800,8 +6755,8 @@ Product details section start
   outline: none;
   width: 40px;
   text-align: center;
-  background-color: var(--bg-color3);
-  color: rgb(var(--white));
+  background-color: var(--bg-color1);
+  color: rgb(var(--heading-color));
 }
 
 .btn-inc-dec {
@@ -6813,7 +6768,7 @@ Product details section start
   align-items: center;
   justify-content: center;
   transition: var(--transition);
-  color: rgb(var(--white));
+  color: rgb(var(--heading-color));
 }
 .btn-inc-dec:hover {
   background-color: var(--bg-color2);
@@ -6890,7 +6845,7 @@ Product details section start
 }
 .info-box .info-text {
   position: absolute;
-  background-color: var(--bg-color3);
+  background-color: var(--bg-color1);
   right: -10px;
   top: 100%;
   z-index: 1;
@@ -6921,7 +6876,7 @@ Product details section start
   font-size: 14px;
 }
 .product-card-item:hover {
-  color: rgb(var(--white));
+  color: rgb(var(--heading-color));
 }
 .product-card-item:hover .img-box img {
   transform: scale(1.03);
@@ -6940,7 +6895,7 @@ Product details section start
 .product-card-item .text-box .title {
   font-size: 16px;
   font-weight: 500;
-  color: rgb(var(--white));
+  color: rgb(var(--heading-color));
 }
 
 .iframe-video {
