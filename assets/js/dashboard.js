@@ -117,11 +117,6 @@ $(document).ready(function () {
                 type: 'bar',
                 height: 350
             },
-            legend: {
-                labels: {
-                    colors: '#ffffff',
-                }
-            },
             plotOptions: {
                 bar: {
                     horizontal: false,
@@ -139,25 +134,11 @@ $(document).ready(function () {
             },
             xaxis: {
                 categories: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-                labels: {
-                    style: {
-                        colors: '#ffffff',
-                    }
-                }
-
             },
             yaxis: {
                 title: {
-                    text: '$ (thousands)',
-                    style: {
-                        color: '#ffffff'
-                    }
+                    text: '$ (thousands)'                    
                 },
-                labels: {
-                    style: {
-                        colors: '#ffffff',
-                    }
-                }
             },
             fill: {
                 opacity: 1,
@@ -208,7 +189,7 @@ $(document).ready(function () {
             value: 0.90,
             size: 70,
             fill: {
-                gradient: ["#32c36c"]
+                gradient: ["#6f4ff2"]
             }
         }).on('circle-animation-progress', function (event, progress) {
             $(this).find('span').html(Math.round(90 * progress) + '<i>%</i>');
@@ -221,7 +202,7 @@ $(document).ready(function () {
             value: 0.60,
             size: 70,
             fill: {
-                gradient: ["#32c36c"]
+                gradient: ["#6f4ff2"]
             }
         }).on('circle-animation-progress', function (event, progress) {
             $(this).find('span').html(Math.round(60 * progress) + '<i>%</i>');
@@ -234,7 +215,7 @@ $(document).ready(function () {
             value: 0.30,
             size: 70,
             fill: {
-                gradient: ["#32c36c"]
+                gradient: ["#6f4ff2"]
             }
         }).on('circle-animation-progress', function (event, progress) {
             $(this).find('span').html(Math.round(30 * progress) + '<i>%</i>');

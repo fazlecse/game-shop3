@@ -327,6 +327,7 @@ body {
     color: var(--body-color);
     font-size: 16px;
     padding: 0 !important;
+    font-weight: 500;
 }
 
 
@@ -442,7 +443,6 @@ intlTelInput section start
     box-shadow: var(--shadow1);
     border: 1px solid var(--border-color2);
     border-radius: 5px;
-    background-color: var(--bg-color3);
 }
 
 .iti-mobile .iti__country-list {
@@ -456,15 +456,6 @@ intlTelInput section start
 
 .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
     background-color: rgb(var(--primary-color), 0.1);
-}
-
-.iti__arrow {
-    border-top: 4px solid rgb(var(--white));
-}
-
-.iti__arrow--up {
-    border-top: none;
-    border-bottom: 4px solid rgb(var(--white));
 }
 
 // Rtl intlTelInput section start
@@ -889,7 +880,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     border: none;
     background-color: var(--bg-color2);
-    color: rgb(var(--white));
+    color: rgb(var(--heading-color));
 }
 
 .accordion-item:not(:first-of-type) {
@@ -1352,7 +1343,7 @@ Reusable style section start
 
 @media(min-width: 992px) and (max-width:1199px) {
     .search-box2 .form-control {
-        width: 258px;
+        width: 255px;
     }
 }
 
@@ -1920,7 +1911,7 @@ Offcanvas end
 }
 
 .social-btn {
-    background: var(--bg-color3);
+    background: var(--bg-color1);
     padding: 10px 20px;
     border: 1px solid var(--border-color1);
     transition: var(--transition);
@@ -1931,11 +1922,12 @@ Offcanvas end
     text-transform: capitalize;
     gap: 5px;
     font-weight: 500;
-    color: rgb(var(--white));
+    color: rgb(var(--heading-color));
     border-radius: 9999px;
 
     &:hover {
         color: rgb(var(--primary-color));
+        box-shadow: var(--shadow1);
     }
 
     img {
@@ -2472,13 +2464,17 @@ section {
     display: inline-flex;
     align-items: center;
     font-size: 16px;
-    color: rgb(var(--heading-color));
+    color: white;
     font-weight: 500;
     text-transform: capitalize;
     gap: 5px;
-    background-color: var(--bg-color1);
+    background-color: rgb(0 0 0 / 20%);
     padding: 4px 15px;
     border-radius: 9999px;
+    backdrop-filter: blur(27px);
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1000ms ease;
 }
 
 @media (max-width: 991px) {
@@ -2603,8 +2599,8 @@ hr.divider:after {
     position: relative;
     top: -12px;
     padding: 0 16px;
-    background: var(--bg-color2);
-    color: rgb(var(--white));
+    background: var(--bg-color1);
+    color: rgb(var(--heading-color));
 }
 
 .dropdown-menu {
@@ -2613,7 +2609,8 @@ hr.divider:after {
     overflow-y: auto;
     border-radius: 5px;
     padding: 8px;
-    background: var(--bg-color3);
+    background: var(--bg-color1);
+    border-color: var(--border-color1);
 
     .dropdown-item {
         border-radius: 5px;
@@ -2626,7 +2623,7 @@ hr.divider:after {
         font-weight: 500;
         display: flex;
         gap: 5px;
-        color: rgb(var(--white));
+        color: rgb(var(--heading-color));
 
         &:hover {
             background: rgb(var(--primary-color));
@@ -3105,7 +3102,7 @@ hr.divider:after {
 // Card sectio start
 .card {
     background-color: var(--bg-color2);
-    border: 1px solid none;
+    border: none;
     box-shadow: none;
     border-radius: 15px;
 
@@ -4006,7 +4003,8 @@ Chat section start
     width: 40px;
     height: 40px;
     border-radius: 7px;
-    background: rgb(var(--primary-color), 0.1);
+    background: var(--bg-color1);
+    border: 1px solid var(--border-color1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4036,7 +4034,7 @@ Chat section start
     border-radius: 10px;
     margin-right: 10px;
     font-size: 16px;
-    color: rgb(var(--white));
+    color: rgb(var(--heading-color));
 
     &:hover {
         background-color: rgb(var(--primary-color), 0.1);
@@ -4128,7 +4126,7 @@ Chat section start
             display: flex;
             justify-content: space-between;
             margin: 15px;
-            background-color: var(--bg-color3);
+            background-color: var(--bg-color1);
             border-radius: 20px;
         }
 
@@ -4160,7 +4158,7 @@ Chat section start
                 .title {
                     font-size: 15px;
                     font-weight: 600;
-                    color: rgb(var(--white));
+                    color: rgb(var(--heading-color));
                 }
 
                 .description {
@@ -4232,8 +4230,8 @@ Chat section start
                 .message-text {
                     border-top-left-radius: 15px;
                     border-top-right-radius: 0;
-                    background: var(--bg-color3);
-                    color: rgb(var(--white));
+                    background: var(--bg-color1);
+                    color: rgb(var(--heading-color));
                 }
 
                 .attach-file-box {
@@ -4251,7 +4249,7 @@ Chat section start
             display: flex;
             align-items: center;
             padding: 10px;
-            background-color: var(--bg-color3);
+            background-color: var(--bg-color1);
             margin: 0 15px 15px 15px;
             border-radius: 20px;
 
@@ -4586,7 +4584,7 @@ Payment section start
         gap: 15px;
         border: 1px solid var(--border-color1);
         outline: 1px solid transparent;
-        background-color: var(--bg-color3);
+        background-color: var(--bg-color1);
 
 
         .image-area {
@@ -5118,17 +5116,17 @@ Cmn table end
 
     button {
         padding: 10px 20px;
-        border: 1px solid var(--border-color1);
         border-radius: 5px;
         font-weight: 400;
         background-color: var(--bg-color3);
         box-shadow: var(--shadow1);
         transition: var(--transition);
         font-size: 16px;
-        color: rgb(var(--white));
+        color: rgb(var(--heading-color));
 
         &:hover {
             background-color: rgb(var(--primary-color));
+            color: rgb(var(--white));
         }
 
         &.active {
@@ -5521,7 +5519,7 @@ Padding bottom
 /*----------------------------------------------
 01. Nav section start
 ----------------------------------------------*/
-.cusotm-navbar {
+.custom-navbar {
     &.active {
         .desktop-view {
             background-color: rgb(var(--primary-color));
@@ -5565,7 +5563,7 @@ Padding bottom
 
     .nav-link {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 600;
         color: rgb(var(--heading-color));
         padding: 8px 15px !important;
         text-transform: uppercase;
@@ -5688,8 +5686,9 @@ Padding bottom
 .mean-container .mean-nav {
     max-height: 360px;
     overflow-y: scroll;
-    background: var(--bg-color3);
+    background: var(--bg-color1);
     margin-top: 31px;
+    box-shadow: var(--shadow1);
 }
 
 .mean-container a.meanmenu-reveal {
@@ -5712,10 +5711,8 @@ Padding bottom
     padding: 10px 5% !important;
     border-top: none !important;
     text-transform: capitalize;
-}
-
-.mean-container .mean-nav ul li a.mean-expand {
-    padding: 10px !important;
+    color: rgb(var(--heading-color));
+    font-weight: 600;
 }
 
 .mean-container .mean-nav ul li a.mean-expand {
@@ -5727,6 +5724,12 @@ Padding bottom
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px !important;
+    background-color: var(--bg-color2);
+}
+
+.mean-container .mean-nav ul li a.mean-expand:hover {
+    background-color: var(--bg-color2);
 }
 
 .mean-container .mean-nav ul li li a {
@@ -5759,7 +5762,7 @@ Padding bottom
 
 // Responsiv nav sectioin start
 @media(max-width: 991px) {
-    .cusotm-nav.active {
+    .custom-navbar.active {
         .desktop-view .desktop-view-wrapper {
             z-index: 9999;
             position: relative;
@@ -5773,7 +5776,7 @@ Padding bottom
 }
 
 @media(max-width: 575px) {
-    .cusotm-nav.active {
+    .custom-navbar.active {
         .desktop-view .desktop-view-wrapper {
             z-index: 9999;
             position: relative;
@@ -5859,10 +5862,6 @@ Bottom Mobile, Tab nav end
 ----------------------------------------------*/
 .hero-section {
     background-color: var(--bg-color1);
-
-    .trending-offers-carousel .owl-nav {
-        top: calc(0% - 90px);
-    }
 }
 
 .hero-swiper {
@@ -5906,86 +5905,139 @@ Bottom Mobile, Tab nav end
     .swiper-pagination-bullet {
         width: 10px;
         height: 5px;
-        background: rgb(var(--black));
+        background: rgb(var(--white));
         border-radius: 0;
         transition: var(--transition);
+        width: 45px;
+        height: 8px;
+        border-radius: 10px;
     }
 
     .swiper-pagination-bullet-active {
-        background: rgb(var(--primary-color));
-        width: 30px;
+        background: rgb(var(--white));
+
     }
 }
 
 .slider-box {
-    background-color: rgb(var(--primary-color), 0.1);
-    padding: 60px 40px;
-    border-radius: 20px;
-    color: rgb(var(--heading-color));
+    color: rgb(var(--white));
     position: relative;
     z-index: 0;
     display: flex;
     align-items: center;
+    background-color: rgb(16, 16, 20);
+    background-color: rgb(40 40 66);
 
-    &::after {
-        content: "";
-        position: absolute;
-        background-image: url(../img/hero/1.avif);
-        background-position: right bottom;
-        background-size: contain;
-        background-repeat: no-repeat;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
 
     .text-box {
-        width: 800px;
+        padding: 0 4rem;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+
+        .text-box-inner {
+            min-height: 40rem;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: start;
+            padding: 4rem 0;
+        }
 
         .title {
             margin-top: 20px;
-            text-transform: uppercase;
+            color: rgb(var(--white));
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1000ms ease;
         }
 
         .description {
-            font-size: 18px;
-            text-transform: uppercase;
-            font-weight: 600;
-            max-width: 450px;
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 1000ms ease;
+        }
+
+        .kew-btn {
+            transform: scale(0, 0);
+            transition: all 1000ms ease;
         }
     }
 
     .img-box {
-        margin-left: -300px;
+        position: absolute;
+        height: 100%;
+        transform-origin: top right;
+        inset-inline-start: calc(64vw - 32rem);
+        aspect-ratio: 17/9;
         z-index: -1;
+
+        .img-1 {
+            filter: blur(8rem) saturate(2);
+            transform: scale(1) translateZ(0);
+            z-index: -1;
+            position: absolute;
+            pointer-events: none;
+            object-fit: cover;
+        }
+
+        .img-2 {
+            filter: blur(12rem) saturate(2);
+            filter: blur(12rem) saturate(2.5);
+            opacity: .8;
+            transform: scale(1.5) translateZ(0);
+            transform: scale(1.8) translateZ(0);
+            z-index: -2;
+            position: absolute;
+            pointer-events: none;
+            object-fit: cover;
+        }
+
+        .img-inner {
+            mask-image: linear-gradient(to left, black 0%, black 65%, transparent 100%);
+            aspect-ratio: 16/9;
+
+            .main-img {
+                height: 100%;
+                object-position: top center;
+                object-fit: cover;
+            }
+        }
     }
 }
 
-.lime-green-box {
-    &::after {
-        background-image: url(../img/hero/shalnark_ryuseih_by_otaku_zonee_dhjavfg-375w-2x.png);
+.swiper-slide-active {
+    .text-box {
+        .title {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: 1000ms;
+        }
+
+        .description {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: 1300ms;
+        }
+
+        .kew-btn {
+            transform: scale(1, 1);
+            transition-delay: 1300ms;
+        }
     }
-}
 
-.pale-blue-box {
-    background-color: #9ac4ff;
-}
-
-.dark-moderate-blue-box {
-    &::after {
-        background-image: url(../img/hero/1.avif);
-    }
-}
-
-.very-light-blue-box {
-    &::after {
-        background-image: url(../img/hero/dai_dragon_quest_png_render_by_marcopolo157_dhbmv1a-pre.png);
+    .section-subtitle {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 1300ms;
     }
 }
 
 // Responsive hero section start
+
 @media(min-width:768px) and (max-width: 1199px) {
     .slider-box {
         .text-box {
@@ -6024,6 +6076,12 @@ Bottom Mobile, Tab nav end
         .text-box {
             width: 100%;
         }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .slider-box {
+        height: 420px;
     }
 }
 
@@ -6116,6 +6174,23 @@ Brands section end
 ----------------------------------------------*/
 .exclusive-offer-section {
     background-color: var(--bg-color2);
+}
+
+/*----------------------------------------------
+Exclusive offer section end
+----------------------------------------------*/
+
+/*----------------------------------------------
+00. Exclusive offer section start
+----------------------------------------------*/
+.trending-items-carousel {
+    position: relative;
+
+    .owl-nav {
+        position: absolute;
+        top: calc(-0% - 100px);
+        right: 0;
+    }
 }
 
 /*----------------------------------------------
@@ -6456,7 +6531,7 @@ Flash deal section end
 }
 
 .product-box3 {
-    background-color: var(--bg-color3);
+    background-color: var(--bg-color2);
     padding: 10px;
     border-radius: 10px;
     display: flex;
@@ -6651,7 +6726,7 @@ Why choose us section end
     background-color: var(--bg-color1);
 
     .accordion-button {
-        color: rgb(var(--white));
+        color: rgb(var(--heading-color));
         font-weight: 500;
         font-size: 18px;
         border-radius: 10px !important;
@@ -6736,78 +6811,102 @@ Buy game id section end
 ----------------------------------------------*/
 .testimonial-section {
     background-color: var(--bg-color2);
-}
-
-.testimonial-box {
-    display: flex;
-    gap: 25px;
+    overflow: hidden;
 
     .img-box {
-        // width: 350px;
-        max-width: 350px;
-        min-width: 350px;
-        height: 410px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
 
-        img {
-            border-radius: 20px;
-            width: 100%;
-            height: 100%;
+    .testimonial-box {
+        margin-top: 30px;
+        position: relative;
+        white-space: normal;
+
+        .profile-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .profile-thumbs {
+            img {
+                width: 55px;
+                min-width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                padding: 2px;
+                background-color: rgb(var(--white));
+                border: 1px solid var(--border-color1);
+            }
+        }
+
+        .qoute-icon {
+            font-size: 35px;
+            color: rgb(var(--primary-color));
+        }
+
+        .quote-area {
+            margin-top: 20px;
         }
     }
 
-    .quote-icon {
-        font-size: 40px;
-        color: rgb(var(--primary-color), 0.5);
-    }
-
-    .reviews li .active {
-        color: rgb(var(--primary-color));
-    }
-
-}
-
-.testimonial-carousel {
     .owl-nav {
         position: absolute;
         right: 0;
         bottom: 0;
     }
+
 }
 
-// Respoinsive testimonial section start
+
+// Responsive testimonial section start
+
+@media(max-width: 991px) {
+    .testimonial-section::after {
+        display: none;
+    }
+}
+
 @media(max-width: 767px) {
-    .testimonial-box {
-        gap: 10px;
-        flex-direction: column;
+    .testimonial-section .testimonial-box {
+        text-align: center;
 
-        .img-box {
-            margin: 0 auto;
-        }
-
-        .quote-icon {
-            font-size: 25px;
+        .profile-box {
+            justify-content: center;
         }
     }
 }
 
-@media(max-width: 575px) {
-    .testimonial-box .img-box {
-        max-width: 350px;
-        min-width: 272px;
-        height: 324px;
-    }
-}
+// Responsive testimonial section end
 
-// Respoinsive testimonial section end
-// Rtl testimonial section start
+// Rtl testimonial section start 
 .rtl {
-    .testimonial-carousel .owl-nav {
-        right: auto;
-        left: 0;
+    .testimonial-section {
+        &::after {
+            right: auto;
+            left: 0;
+            border-radius: 0 40px 40px 0;
+        }
+
+        .owl-nav {
+            right: auto;
+            left: 0;
+
+            .owl-prev {
+                transform: rotate(-180deg);
+            }
+
+            .owl-next {
+                transform: rotate(-180deg);
+            }
+        }
     }
 }
 
-// Rtl testimonial section end
+// Rtl testimonial section start 
+
 /*----------------------------------------------
 Testimonial end
 ----------------------------------------------*/
@@ -6823,14 +6922,12 @@ Testimonial end
 
 .blog-box {
     border-radius: 16px;
-    background-color: var(--bg-color2);
-    padding: 20px;
 
     &:hover {
         .img-box {
 
             img {
-                transform: scale(1.03);
+                transform: scale(1.1);
             }
         }
     }
@@ -6838,9 +6935,12 @@ Testimonial end
     .img-box {
         overflow: hidden;
         border-radius: 15px;
-        margin-bottom: 24px;
+        margin-top: 24px;
         display: flex;
-        height: 275px;
+        height: 300px;
+        padding: 15px;
+        background-color: var(--bg-color2);
+        border: 1px solid var(--border-color1);
 
         img {
             width: 100%;
@@ -6860,9 +6960,8 @@ Testimonial end
             -webkit-line-clamp: 2;
             line-clamp: 2;
             font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 0;
-            margin-top: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
     }
 }
@@ -7489,7 +7588,7 @@ Newsletter end
         }
 
         &::before {
-            border-radius: 2px;
+            border-radius: 50%;
             height: 7px;
             width: 7px;
             content: '';
@@ -8018,7 +8117,7 @@ Login Signup end
             font-size: 18px;
             display: flex;
             justify-content: space-between;
-            color: rgb(var(--white));
+            color: rgb(var(--heading-color));
             font-family: var(--heading-font);
 
             &:hover {
@@ -8052,7 +8151,7 @@ Login Signup end
         padding: 10px 15px;
         transition: var(--transition);
         border-radius: 5px;
-        background-color: var(--bg-color3);
+        background-color: var(--bg-color1);
         gap: 5px;
         font-weight: 500;
         text-transform: capitalize;
@@ -8131,7 +8230,7 @@ Login Signup end
                 overflow: hidden;
                 text-overflow: ellipsis;
                 line-height: 1.3;
-                color: rgb(var(--white));
+                color: rgb(var(--heading-color));
                 margin-bottom: 10px;
                 font-family: var(--heading-font);
             }
@@ -8139,7 +8238,7 @@ Login Signup end
             .widget-date {
                 display: flex;
                 gap: 5px;
-                color: rgb(var(--white));
+                color: rgb(var(--heading-color));
 
                 i {
                     color: rgb(var(--primary-color));
@@ -8197,7 +8296,7 @@ Login Signup end
     .text-box {
         .title {
             font-size: 18px;
-            color: rgb(var(--white));
+            color: rgb(var(--heading-color));
             overflow: hidden;
             text-overflow: ellipsis;
             -webkit-box-orient: vertical;
@@ -8213,7 +8312,7 @@ Login Signup end
 
         .price {
             .promo-price {
-                color: rgb(var(--white));
+                color: rgb(var(--heading-color));
                 font-size: 20px;
             }
 

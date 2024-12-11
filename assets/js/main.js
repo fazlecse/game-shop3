@@ -58,12 +58,11 @@ $(document).ready(function () {
         loop: true,
         autoplay: true,
         margin: 20,
-        autoplayTimeout: 2000,
+        autoplayTimeout: 3000,
         // rtl: true,
         nav: true,
         dots: false,
         navText: ["<i class='fa-regular fa-angle-left'></i>", "<i class='fa-regular fa-angle-right'></i>"],
-
         responsive: {
             0: {
                 items: 1,
@@ -73,6 +72,44 @@ $(document).ready(function () {
             },
             768: {
                 items: 1,
+                nav: true,
+                dots: false,
+
+            },
+        }
+    });
+
+    $('.trending-items-carousel').owlCarousel({
+        loop: true,
+        autoplay: true,
+        margin: 20,
+        autoplayTimeout: 2000,
+        // rtl: true,
+        nav: true,
+        dots: false,
+        navText: ["<i class='fa-regular fa-angle-left'></i>", "<i class='fa-regular fa-angle-right'></i>"],
+        responsive: {
+            0: {
+                items: 2,
+                nav: false,
+                dots: true,
+                dotsEach: 4,
+                margin: 10,
+            },
+            768: {
+                items: 3,
+                nav: true,
+                dots: false,
+
+            },
+            992: {
+                items: 4,
+                nav: true,
+                dots: false,
+
+            },
+            1200: {
+                items: 6,
                 nav: true,
                 dots: false,
 
@@ -184,14 +221,14 @@ $(document).ready(function () {
     const progressCircle = document.querySelector(".autoplay-progress svg");
     const progressContent = document.querySelector(".autoplay-progress span");
     var swiper = new Swiper(".hero-swiper", {
-        spaceBetween: 30,
         centeredSlides: true,
+        effect: "fade",
         autoplay: {
             false: true,
-            delay: 2500,
+            delay: 3000,
             disableOnInteraction: false
         },
-        // autoplay: false,
+        autoplay: false,
         pagination: {
             el: ".swiper-pagination",
             clickable: true
@@ -211,7 +248,7 @@ $(document).ready(function () {
 
     // Countdown start
     if ($('.countdown').length) {
-        $('.countdown').countdown('2025/06/31', function (event) {
+        $('.countdown').countdown('2025/3/19', function (event) {
             $(this).html(event.strftime('<div class="single-countdown"><h5>%D</h5><span>Days</span> </div> <div class="single-countdown"><h5>%H</h5><span>Hours</span> </div> <div class="single-countdown"><h5>%M</h5><span>Minutes</span> </div> <div class="single-countdown"><h5>%S</h5><span>Second</span> </div>'));
         });
     }
