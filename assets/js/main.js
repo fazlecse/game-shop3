@@ -54,9 +54,9 @@ $(document).ready(function () {
     });
 
     // product-slider carousel
-    $('.trending-offers-carousel').owlCarousel({
+    $('.flash-sale-carousel').owlCarousel({
         loop: true,
-        autoplay: true,
+        // autoplay: true,
         margin: 20,
         autoplayTimeout: 3000,
         // rtl: true,
@@ -71,10 +71,9 @@ $(document).ready(function () {
                 dotsEach: 3
             },
             768: {
-                items: 1,
+                items: 4,
                 nav: true,
                 dots: false,
-
             },
         }
     });
@@ -228,7 +227,7 @@ $(document).ready(function () {
             delay: 3000,
             disableOnInteraction: false
         },
-        autoplay: false,
+        // autoplay: false,
         pagination: {
             el: ".swiper-pagination",
             clickable: true

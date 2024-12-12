@@ -988,6 +988,12 @@ a.ui-button:active,
 }
 
 // Jquery UI section end
+@media(min-width: 1400px) {
+    .container {
+        max-width: 1450px;
+    }
+}
+
 /*----------------------------------------------
 Reset end
 ----------------------------------------------*/
@@ -1081,39 +1087,16 @@ Reusable style section start
 
 // Cmn box start
 .cmn-box {
-    border: 1px solid var(--border-color1);
+    // border: 1px solid var(--border-color1);
     border-radius: 16px;
     padding: 30px 20px;
     transition: var(--transition);
+    background-color: var(--bg-color1);
 
     &:hover {
         background-color: var(--bg-color2);
-
-        .title {
-            color: rgb(var(--primary-color));
-
-            .text-stroke {
-                -webkit-text-stroke: 1px rgb(var(--primary-color));
-
-            }
-        }
-    }
-
-    .title {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        margin-bottom: 0;
-        transition: var(--transition);
-
-        .text-stroke {
-            -webkit-text-stroke: 1px var(--body-color);
-            color: rgb(var(--white));
-            font-size: 32px;
-        }
     }
 }
-
 // Cmn box end
 
 // Text underline start
@@ -1861,6 +1844,7 @@ Offcanvas end
     &:hover {
         background-color: rgb(var(--primary-color), 0.8);
         color: rgb(var(--white));
+        gap: 10px;
     }
 
 }
@@ -2003,8 +1987,18 @@ Offcanvas end
     text-transform: capitalize;
     font-weight: 500;
     font-size: 18px;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 
-
+    &:hover {
+        text-decoration: underline;
+        gap: 10px;
+        background-color: rgb(var(--primary-color), 0.1);
+        padding: 2px 10px;
+        border-radius: 8px;
+    }
 }
 
 // Round btn start
@@ -5932,7 +5926,7 @@ Bottom Mobile, Tab nav end
     .text-box {
         padding: 0 4rem;
         width: 100%;
-        max-width: 1400px;
+        max-width: 1450px;
         margin: 0 auto;
 
         .text-box-inner {
@@ -6204,7 +6198,7 @@ Exclusive offer section end
     background-color: var(--bg-color1);
 
     .img-box {
-        max-width: 600px;
+        max-width: 500px;
         margin: 0 auto;
     }
 }
@@ -6235,17 +6229,21 @@ Flash deal section end
 
     .left-side {
         background-color: var(--bg-color2);
-        padding: 10px;
+        padding: 30px;
         border-radius: 10px;
+        position: relative;
+        z-index: 1;
 
-        .img-box {
-            max-width: 200px;
-            margin: 0 auto;
-        }
-
-        .text-box {
-            text-align: center;
-            margin-top: 25px;
+        &::after {
+            position: absolute;
+            content: "";
+            border: 1px dashed rgb(var(--primary-color));
+            left: 7px;
+            top: 7px;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            z-index: -1;
         }
     }
 
@@ -6256,11 +6254,11 @@ Flash deal section end
 
         .single-countdown {
             text-align: center;
-            font-weight: 700;
+            font-weight: 500;
         }
 
         h5 {
-            font-size: 36px;
+            font-size: 30px;
             padding: 15px;
             background-color: var(--bg-color1);
             border-radius: 12px;
@@ -6273,48 +6271,120 @@ Flash deal section end
     }
 }
 
-.flash-deal-section-inner {
-    background-color: var(--bg-color1);
-    padding: 40px;
-    border-radius: 15px;
+.cart-btn-sm {
+    width: 40px;
+    height: 40px;
+    background-color: var(--moderate-lime-green);
+    color: rgb(var(--white));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+
+    &:hover {
+        color: rgb(var(--white));
+    }
+}
+
+.flash-product-box {
+    &:hover {
+        color: rgb(var(--heading-color));
+
+        .img-box {
+
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .img-box {
+        height: 250px;
+        overflow: hidden;
+        border-radius: 15px;
+        display: block;
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+    }
+
+    .text-box {
+        position: relative;
+
+        .title {
+            font-size: 18px;
+        }
+
+        .promo-price {
+            font-size: 22px;
+            color: rgb(var(--primary-color));
+            font-size: 700;
+        }
+
+        .line-through {
+            text-decoration: line-through;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .discount {
+            position: absolute;
+            background-color: rgb(var(--primary-color));
+            color: rgb(var(--white));
+            padding: 10px 15px;
+            top: -55px;
+            left: 15px;
+            border-radius: 10px;
+        }
+    }
+
 }
 
 .product-box {
-    padding: 10px;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    background-color: var(--bg-color1);
-    border: 1px solid var(--border-color1);
     overflow: hidden;
     transition: var(--transition);
     height: 100%;
     gap: 15px;
+    position: relative;
 
     &:hover {
         color: rgb(var(--heading-color));
 
         .img-box {
-            border-radius: 5px;
+            border-radius: 15px;
 
             img {
                 transform: scale(1.03);
+            }
+        }
+
+        .text-box {
+            .title {
+                color: rgb(var(--primary-color));
             }
         }
     }
 
     .img-box {
         width: 100%;
-        height: 150px;
         overflow: hidden;
-        border-radius: 8px;
+        border-radius: 15px;
         border: 1px solid var(--border-color1);
+        aspect-ratio: 1/1;
 
         img {
             width: 100%;
             height: 100%;
             transition: var(--transition);
             border-radius: 5px;
+            object-fit: cover;
         }
     }
 
@@ -6329,8 +6399,8 @@ Flash deal section end
         }
 
         .title {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 500;
             color: rgb(var(--heading-color));
             overflow: hidden;
             text-overflow: ellipsis;
@@ -6338,7 +6408,7 @@ Flash deal section end
             display: -webkit-box;
             -webkit-line-clamp: 1;
             line-clamp: 1;
-
+            transition: var(--transition);
         }
 
         .name {
@@ -6353,7 +6423,7 @@ Flash deal section end
         }
 
         .bottom-info {
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         .price {
@@ -6361,7 +6431,6 @@ Flash deal section end
             display: flex;
             justify-content: space-between;
             align-items: center;
-
 
             .promo-price {
                 font-weight: 500;
@@ -6371,16 +6440,6 @@ Flash deal section end
                 .number {
                     color: rgb(var(--white));
                 }
-            }
-
-            .discount {
-                font-size: 14px;
-                background-color: rgb(var(--primary-color), 0.1);
-                padding: 2px 10px;
-                border-radius: 3px;
-                color: rgb(var(--heading-color));
-                color: rgb(var(--primary-color));
-                font-weight: 500;
             }
 
             .sell {
@@ -6396,6 +6455,18 @@ Flash deal section end
                 font-size: 14px;
             }
         }
+    }
+
+    .discount {
+        font-size: 14px;
+        background-color: rgb(var(--primary-color));
+        padding: 2px 10px;
+        border-radius: 3px;
+        color: rgb(var(--white));
+        font-weight: 500;
+        position: absolute;
+        right: 10px;
+        top: 10px;
     }
 }
 
@@ -6570,7 +6641,7 @@ Flash deal section end
     }
 }
 
-.trending-offers-carousel {
+.flash-sale-carousel {
     position: relative;
 
     .owl-nav {
@@ -6578,6 +6649,13 @@ Flash deal section end
         top: calc(-0% - 100px);
         right: 0;
     }
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(221px, 1fr));
+    gap: 20px;
+
 }
 
 // Responsive flash deal section start
