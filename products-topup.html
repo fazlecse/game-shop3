@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <!-- Meanmenu css link -->
     <link rel="stylesheet" href="assets/css/meanmenu.css">
-
+    <!-- rangeSlider Css link -->
+    <link rel="stylesheet" href="assets/css/ion.rangeSlider.min.css">
     <!-- Style Css link -->
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -562,8 +563,38 @@
             <div class="row g-4">
                 <div class="col-lg-3">
                     <div class="sidebar-widget-area">
-                        <h4 class="widget-title">Categories</h4>
-
+                        <h5 class="widget-title">Search</h5>
+                        <div class="search-box">
+                            <input type="text" class="form-control" placeholder="Search here...">
+                            <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget-area">
+                        <h5 class="widget-title">Filter by price</h5>
+                        <div class="range-area">
+                            <input type="text" class="js-range-slider" name="my_range" value="">
+                        </div>
+                    </div>
+                    <div class="sidebar-widget-area">
+                        <h5 class="widget-title">region</h5>
+                        <select class="cmn-select2" name="state">
+                            <option value="AL">Select</option>
+                            <option value="AL">Bangladesh</option>
+                            <option value="WY">Australia</option>
+                            <option value="WY">Belarus</option>
+                            <option value="WY">Canada</option>
+                            <option value="WY">China</option>
+                            <option value="WY">France</option>
+                            <option value="WY">Germany</option>
+                            <option value="WY">India</option>
+                            <option value="WY">Indonesia</option>
+                            <option value="WY">Italy</option>
+                            <option value="WY">Japan</option>
+                            <option value="WY">Korea</option>
+                        </select>
+                    </div>
+                    <div class="sidebar-widget-area">
+                        <h5 class="widget-title">Categories</h5>
                         <div class="checkbox-categories-area">
                             <div class="section-inner">
                                 <div class="categories-list">
@@ -639,64 +670,89 @@
                     <div class="mt-20">
                         <div class="row g-3 g-sm-4">
                             <div class="col-xl-3 col-md-4 col-6">
-                                <div class="category-box">
-                                    <a href="product-details.html" class="img-box">
-                                        <img src="./assets/img/products/big/clash-of-clan.webp" alt="" />
-                                    </a>
-                                    <div class="text-box">
-                                        <a href="product-details.html" class="title">Clash of Clans Gold Pass</a>
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/clash-of-clan.webp" alt="product-img" />
                                     </div>
-                                </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="title">
+                                                Clash of Clans Gold Pass
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                             <div class="col-xl-3 col-md-4 col-6">
-                                <div class="category-box">
-                                    <a href="product-details.html" class="img-box">
-                                        <img src="./assets/img/products/big/6.png" alt="" />
-                                    </a>
-                                    <div class="text-box">
-                                        <a href="product-details.html" class="title">PUBG Mobile</a>
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/6.webp" alt="product-img" />
                                     </div>
-                                </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="title">
+                                                PUBG Mobile Game
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                             <div class="col-xl-3 col-md-4 col-6">
-                                <div class="category-box">
-                                    <a href="product-details.html" class="img-box">
-                                        <img src="./assets/img/products/big/5.png" alt="" />
-                                    </a>
-                                    <div class="text-box">
-                                        <a href="product-details.html" class="title">Free Fire Diamonds</a>
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/5.png" alt="product-img" />
                                     </div>
-                                </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="title">
+                                                Free Fire Diamonds
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                             <div class="col-xl-3 col-md-4 col-6">
-                                <div class="category-box">
-                                    <a href="product-details.html" class="img-box">
-                                        <img src="./assets/img/products/big/league-of-legends.png" alt="" />
-                                    </a>
-                                    <div class="text-box">
-                                        <a href="product-details.html" class="title">League of Legends</a>
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/league-of-legends.png" alt="product-img" />
                                     </div>
-                                </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="title">
+                                                League of Legends
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                             <div class="col-xl-3 col-md-4 col-6">
-                                <div class="category-box">
-                                    <a href="product-details.html" class="img-box">
-                                        <img src="./assets/img/products/big/clash-of-clan.webp" alt="" />
-                                    </a>
-                                    <div class="text-box">
-                                        <a href="product-details.html" class="title">Clash of Clans Gold Pass</a>
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/Path-of-Exile-POE-TH.png"
+                                            alt="product-img" />
                                     </div>
-                                </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="title">
+                                                Path of Exile POE TH
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                             <div class="col-xl-3 col-md-4 col-6">
-                                <div class="category-box">
-                                    <a href="product-details.html" class="img-box">
-                                        <img src="./assets/img/products/big/6.png" alt="" />
-                                    </a>
-                                    <div class="text-box">
-                                        <a href="product-details.html" class="title">PUBG Mobile</a>
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/bom-beach.png" alt="product-img" />
                                     </div>
-                                </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="title">
+                                                Bom Beach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -886,6 +942,8 @@
     <script src="assets/js/jquery.nice-select.min.js"></script>
     <!-- Meanmenu Js link -->
     <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!-- rangeSlider Js link -->
+    <script src="assets/js/ion.rangeSlider.min.js"></script>
     <!-- Main Js link -->
     <script src="assets/js/main.js"></script>
 

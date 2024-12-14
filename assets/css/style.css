@@ -484,6 +484,7 @@ span.select2.select2-container.select2-container--default {
   align-items: center;
   font-size: 15px;
   padding: 0.375rem 15px;
+  border-radius: 10px;
 }
 
 .select2-container .select2-dropdown {
@@ -509,7 +510,6 @@ span.select2.select2-container.select2-container--default {
 .select2-container .select2-dropdown .select2-search__field:focus-visible {
   box-shadow: none;
   border: 1px solid var(--border-color2);
-  color: rgb(var(--white));
 }
 
 .select2-results__option {
@@ -603,10 +603,6 @@ Breadcrumb start
 .breadcrumb {
   display: inline-flex;
   justify-content: center;
-  margin-top: 10px;
-  background-color: rgb(var(--white));
-  padding: 7px 20px;
-  border-radius: 9999px;
 }
 .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   content: "\f105";
@@ -2534,16 +2530,18 @@ hr.divider:after {
 }
 
 .card {
-  background-color: var(--bg-color2);
-  border: none;
-  box-shadow: none;
+  border: 1px solid var(--border-color1);
+  box-shadow: var(--shadow1);
   border-radius: 15px;
+  background-color: var(--bg-color1);
 }
 .card .card-header {
   padding: 20px;
-  background-color: rgb(var(--primary-color));
+  background-color: var(--bg-color1);
   padding-bottom: 15px;
   border-color: var(--border-color1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 .card .card-header .title {
   display: flex;
@@ -2558,7 +2556,6 @@ hr.divider:after {
 }
 
 .nice-select {
-  width: 100%;
   border-color: var(--border-color1);
   text-transform: capitalize;
   font-size: 16px;
@@ -5177,14 +5174,14 @@ Flash deal section end
   transition: var(--transition);
 }
 .product-box .text-box .name {
-  margin-bottom: 0;
+  margin-bottom: 5px;
   font-size: 15px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.product-box .text-box .name i {
+  color: rgb(var(--primary-color));
 }
 .product-box .text-box .bottom-info {
   margin-top: 5px;
@@ -5199,9 +5196,6 @@ Flash deal section end
   font-weight: 500;
   font-size: 16px;
   color: rgb(var(--heading-color));
-}
-.product-box .text-box .price .promo-price .number {
-  color: rgb(var(--white));
 }
 .product-box .text-box .price .sell {
   display: flex;
@@ -5237,6 +5231,7 @@ Flash deal section end
   border-radius: 16px;
   width: 20px;
   height: 20px;
+  border: 1px solid var(--border-color1);
 }
 
 .product-box2 {
@@ -5244,19 +5239,18 @@ Flash deal section end
   justify-content: space-between;
   gap: 10px;
   border-radius: 8px;
-  background-color: var(--bg-color2);
+  background-color: var(--bg-color1);
   overflow: hidden;
   transition: var(--transition);
   border: 1px solid var(--border-color1);
   outline: 1px solid transparent;
   height: 100%;
-  padding: 12px;
+  padding: 8px;
 }
 .product-box2:hover .img-box img {
   transform: scale(1.03);
 }
 .product-box2.active {
-  background-color: rgb(var(--primary-color), 0.1);
   border: 1px solid rgb(var(--primary-color));
   outline: 1px solid rgb(var(--primary-color));
 }
@@ -6884,7 +6878,34 @@ Product details section start
 ----------------------------------------------*/
 .product-details-section {
   background-color: var(--bg-color1);
-  padding-top: 100px;
+  position: relative;
+  z-index: 0;
+}
+.product-details-section::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(180deg, rgba(245, 245, 245, 0), #ffffff), linear-gradient(84deg, rgba(59, 179, 255, 0.2), rgba(47, 61, 187, 0.2) 70.83%, rgba(117, 47, 187, 0.2) 100%, #ffffff);
+  z-index: -1;
+}
+.product-details-section .product-details-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.product-details-section .product-details-header .img-box {
+  max-width: 250px;
+  aspect-ratio: 1/1;
+}
+.product-details-section .product-details-header .img-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
 
 .item-count {

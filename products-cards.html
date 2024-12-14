@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <!-- Meanmenu css link -->
     <link rel="stylesheet" href="assets/css/meanmenu.css">
-
+    <!-- rangeSlider Css link -->
+    <link rel="stylesheet" href="assets/css/ion.rangeSlider.min.css">
     <!-- Style Css link -->
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -562,8 +563,38 @@
             <div class="row g-4">
                 <div class="col-lg-3">
                     <div class="sidebar-widget-area">
-                        <h4 class="widget-title">Categories</h4>
-
+                        <h5 class="widget-title">Search</h5>
+                        <div class="search-box">
+                            <input type="text" class="form-control" placeholder="Search here...">
+                            <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget-area">
+                        <h5 class="widget-title">Filter by price</h5>
+                        <div class="range-area">
+                            <input type="text" class="js-range-slider" name="my_range" value="">
+                        </div>
+                    </div>
+                    <div class="sidebar-widget-area">
+                        <h5 class="widget-title">region</h5>
+                        <select class="cmn-select2" name="state">
+                            <option value="AL">Select</option>
+                            <option value="AL">Bangladesh</option>
+                            <option value="WY">Australia</option>
+                            <option value="WY">Belarus</option>
+                            <option value="WY">Canada</option>
+                            <option value="WY">China</option>
+                            <option value="WY">France</option>
+                            <option value="WY">Germany</option>
+                            <option value="WY">India</option>
+                            <option value="WY">Indonesia</option>
+                            <option value="WY">Italy</option>
+                            <option value="WY">Japan</option>
+                            <option value="WY">Korea</option>
+                        </select>
+                    </div>
+                    <div class="sidebar-widget-area">
+                        <h5 class="widget-title">Categories</h5>
                         <div class="checkbox-categories-area">
                             <div class="section-inner">
                                 <div class="categories-list">
@@ -637,7 +668,7 @@
                         </div>
                     </div>
                     <div class="mt-20">
-                        <div class="row g-3">
+                        <div class="row g-4">
                             <div class="col-xl-3 col-md-4 col-6">
                                 <a href="product-details.html" class="product-box">
                                     <div class="img-box">
@@ -645,29 +676,16 @@
                                     </div>
                                     <div class="text-box">
                                         <div class="top-info">
-                                            <div class="review">
-                                                <div class="reviews d-flex align-items-center gap-2">
-                                                    <div>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                    </div>
-                                                    <span>(5 reviews)</span>
-                                                </div>
-                                            </div>
-                                            <div class="title mt-10">
+                                            <div class="region mb-1"><img src="./assets/img/mini-flag/gb-eng.svg"
+                                                    alt="">UK</div>
+                                            <div class="title">
                                                 Apple Gift Card
                                             </div>
-                                            <p class="name mt-1">UK</p>
+
                                         </div>
                                         <div class="bottom-info">
                                             <div class="price">
                                                 <div class="promo-price">Starting- <span class="number">$0.26</span>
-                                                </div>
-                                                <div class="sell">
-                                                    <i class="fa-regular fa-shopping-cart"></i>4.5k
                                                 </div>
                                             </div>
                                         </div>
@@ -681,29 +699,15 @@
                                     </div>
                                     <div class="text-box">
                                         <div class="top-info">
-                                            <div class="review">
-                                                <div class="reviews d-flex align-items-center gap-2">
-                                                    <div>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                    </div>
-                                                    <span>(5 reviews)</span>
-                                                </div>
-                                            </div>
-                                            <div class="title mt-10">
+                                            <div class="region mb-1"><img src="./assets/img/mini-flag/in.svg"
+                                                    alt="">India</div>
+                                            <div class="title">
                                                 Google Play Gift Card (IN)
                                             </div>
-                                            <p class="name mt-1">India</p>
                                         </div>
                                         <div class="bottom-info">
                                             <div class="price">
                                                 <div class="promo-price">Starting- <span class="number">$0.26</span>
-                                                </div>
-                                                <div class="sell">
-                                                    <i class="fa-regular fa-shopping-cart"></i>4.5k
                                                 </div>
                                             </div>
                                         </div>
@@ -717,29 +721,15 @@
                                     </div>
                                     <div class="text-box">
                                         <div class="top-info">
-                                            <div class="review">
-                                                <div class="reviews d-flex align-items-center gap-2">
-                                                    <div>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                    </div>
-                                                    <span>(5 reviews)</span>
-                                                </div>
+                                            <div class="region mb-1"><img src="./assets/img/mini-flag/us.svg" alt="">US
                                             </div>
-                                            <div class="title mt-10">
+                                            <div class="title">
                                                 iTunes Gift Card
                                             </div>
-                                            <p class="name mt-1">US</p>
                                         </div>
                                         <div class="bottom-info">
                                             <div class="price">
                                                 <div class="promo-price">Starting- <span class="number">$0.26</span>
-                                                </div>
-                                                <div class="sell">
-                                                    <i class="fa-regular fa-shopping-cart"></i>4.5k
                                                 </div>
                                             </div>
                                         </div>
@@ -753,29 +743,106 @@
                                     </div>
                                     <div class="text-box">
                                         <div class="top-info">
-                                            <div class="review">
-                                                <div class="reviews d-flex align-items-center gap-2">
-                                                    <div>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="active fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                    </div>
-                                                    <span>(5 reviews)</span>
-                                                </div>
+                                            <div class="region mb-1"><img
+                                                    src="./assets/img/mini-flag/globe-svgrepo-com.svg" alt="">Global
                                             </div>
-                                            <div class="title mt-10">
+                                            <div class="title">
                                                 Tik LIve Gift Card
                                             </div>
-                                            <p class="name mt-1">Global</p>
                                         </div>
                                         <div class="bottom-info">
                                             <div class="price">
                                                 <div class="promo-price">Starting- <span class="number">$0.26</span>
                                                 </div>
-                                                <div class="sell">
-                                                    <i class="fa-regular fa-shopping-cart"></i>4.5k
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6">
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/enaba-gift-card.jpg" alt="" />
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="region mb-1"><img src="./assets/img/mini-flag/gb-eng.svg"
+                                                    alt="">UK</div>
+                                            <div class="title">
+                                                Eneba Gift Card
+                                            </div>
+
+                                        </div>
+                                        <div class="bottom-info">
+                                            <div class="price">
+                                                <div class="promo-price">Starting- <span class="number">$0.26</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6">
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/apple-card.jpg" alt="" />
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="region mb-1"><img src="./assets/img/mini-flag/in.svg"
+                                                    alt="">India</div>
+                                            <div class="title">
+                                                Google Play Gift Card (IN)
+                                            </div>
+                                        </div>
+                                        <div class="bottom-info">
+                                            <div class="price">
+                                                <div class="promo-price">Starting- <span class="number">$0.26</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6">
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/itunes-card.jpg" alt="" />
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="region mb-1"><img src="./assets/img/mini-flag/us.svg" alt="">US
+                                            </div>
+                                            <div class="title">
+                                                iTunes Gift Card
+                                            </div>
+                                        </div>
+                                        <div class="bottom-info">
+                                            <div class="price">
+                                                <div class="promo-price">Starting- <span class="number">$0.26</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6">
+                                <a href="product-details.html" class="product-box">
+                                    <div class="img-box">
+                                        <img src="./assets/img/products/big/tik-live.jpg" alt="" />
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="top-info">
+                                            <div class="region mb-1"><img
+                                                    src="./assets/img/mini-flag/globe-svgrepo-com.svg" alt="">Global
+                                            </div>
+                                            <div class="title">
+                                                Tik LIve Gift Card
+                                            </div>
+                                        </div>
+                                        <div class="bottom-info">
+                                            <div class="price">
+                                                <div class="promo-price">Starting- <span class="number">$0.26</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -971,6 +1038,8 @@
     <script src="assets/js/jquery.nice-select.min.js"></script>
     <!-- Meanmenu Js link -->
     <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!-- rangeSlider Js link -->
+    <script src="assets/js/ion.rangeSlider.min.js"></script>
     <!-- Main Js link -->
     <script src="assets/js/main.js"></script>
 
