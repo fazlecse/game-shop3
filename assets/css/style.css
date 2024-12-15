@@ -1435,6 +1435,9 @@ Reusable style section start
 /*----------------------------------------------
 Offcanvas section start 
 ----------------------------------------------*/
+.offcanvas {
+  z-index: 99999;
+}
 .offcanvas .accordion-button {
   font-size: 16px;
   font-weight: 500;
@@ -1658,6 +1661,7 @@ Offcanvas end
   gap: 5px;
 }
 .view-all-btn:hover {
+  transition: var(--transition);
   text-decoration: underline;
   gap: 10px;
   background-color: rgb(var(--primary-color), 0.1);
@@ -2561,10 +2565,12 @@ hr.divider:after {
   font-size: 16px;
   background-color: var(--bg-color2);
   border-radius: 9999px;
+  font-weight: 500;
 }
 
 .nice-select .option {
   text-transform: capitalize;
+  font-weight: 500;
 }
 
 .nice-select .option.selected {
@@ -4061,7 +4067,7 @@ Cmn table end
 .isotope-btn-group button {
   padding: 10px 20px;
   border-radius: 5px;
-  font-weight: 400;
+  font-weight: 500;
   background-color: var(--bg-color3);
   box-shadow: var(--shadow1);
   transition: var(--transition);
@@ -4772,24 +4778,23 @@ Bottom Mobile, Tab nav end
   position: relative;
   z-index: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   background-color: rgb(16, 16, 20);
   background-color: rgb(40, 40, 66);
 }
 .slider-box .text-box {
-  padding: 0 4rem;
   width: 100%;
   max-width: 1450px;
   margin: 0 auto;
+  padding: 20px;
 }
 .slider-box .text-box .text-box-inner {
-  min-height: 40rem;
   max-width: 600px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: start;
-  padding: 4rem 0;
 }
 .slider-box .text-box .title {
   margin-top: 20px;
@@ -4810,10 +4815,8 @@ Bottom Mobile, Tab nav end
   transition: all 1000ms ease;
 }
 .slider-box .img-box {
-  position: absolute;
   height: 100%;
   transform-origin: top right;
-  inset-inline-start: calc(64vw - 32rem);
   aspect-ratio: 17/9;
   z-index: -1;
 }
@@ -4839,8 +4842,6 @@ Bottom Mobile, Tab nav end
      object-fit: cover;
 }
 .slider-box .img-box .img-inner {
-  -webkit-mask-image: linear-gradient(to left, black 0%, black 65%, transparent 100%);
-          mask-image: linear-gradient(to left, black 0%, black 65%, transparent 100%);
   aspect-ratio: 16/9;
 }
 .slider-box .img-box .img-inner .main-img {
@@ -4871,6 +4872,33 @@ Bottom Mobile, Tab nav end
   transition-delay: 1300ms;
 }
 
+@media (min-width: 768px) {
+  .slider-box .img-box {
+    inset-inline-start: calc(64vw - 32rem);
+    position: absolute;
+  }
+  .slider-box .img-box .img-inner {
+    -webkit-mask-image: linear-gradient(to left, black 0%, black 65%, transparent 100%);
+            mask-image: linear-gradient(to left, black 0%, black 65%, transparent 100%);
+  }
+  .slider-box .text-box {
+    padding: 0 4rem;
+  }
+  .slider-box .text-box .text-box-inner {
+    min-height: 40rem;
+    padding: 4rem 0;
+  }
+}
+@media (max-width: 767px) {
+  .slider-box .img-box .img-inner {
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
+  }
+  .slider-box .text-box .text-box-inner {
+    padding: 2rem 0;
+    margin: 0 auto;
+  }
+}
 @media (min-width: 768px) and (max-width: 1199px) {
   .slider-box .text-box {
     width: 80%;
@@ -4892,16 +4920,8 @@ Bottom Mobile, Tab nav end
   }
 }
 @media only screen and (max-width: 767px) {
-  .slider-box {
-    padding: 20px;
-  }
   .slider-box .text-box {
     width: 100%;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .slider-box {
-    height: 420px;
   }
 }
 .rtl .slider-box::after {
@@ -5048,7 +5068,7 @@ Flash deal section end
 }
 .flash-deal-section .countdown h5 {
   font-size: 30px;
-  padding: 15px;
+  padding: 13px;
   background-color: var(--bg-color1);
   border-radius: 12px;
 }
@@ -5370,7 +5390,7 @@ Flash deal section end
 
 .product-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(221px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(217px, 1fr));
   gap: 20px;
 }
 
@@ -5383,11 +5403,13 @@ Flash deal section end
   .flash-deal-section-inner {
     padding: 20px;
   }
-  .product-box .text-box .title {
-    font-size: 14px;
-  }
   .product-box .text-box .price .promo-price {
     font-size: 16px;
+  }
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
+    gap: 20px;
   }
 }
 .rtl .trending-offers-carousel .owl-nav {
@@ -5797,7 +5819,7 @@ Blog section end
   height: 250px;
   min-width: 250px;
   border-radius: 15px;
-  background-color: var(--bg-color3);
+  background-color: var(--bg-color1);
   padding: 5px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -6324,9 +6346,13 @@ Banner end
   position: relative;
   z-index: 0;
 }
-.contact-section .left-side .img-box {
-  max-width: 487px;
-  margin: 0 auto;
+
+.contact-area {
+  padding: 20px;
+}
+.contact-area .thumbs-area {
+  max-width: 250px;
+  margin: auto;
 }
 
 .contact-item-list {
@@ -6338,19 +6364,19 @@ Banner end
 .contact-item-list .item {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 25px;
+  gap: 15px;
+  border: 1px solid var(--border-color1);
+  padding: 10px;
   border-radius: 10px;
-  background-color: var(--bg-color2);
+  box-shadow: var(--shadow1);
 }
 .contact-item-list .item .icon-area {
   border-radius: 5px;
-  width: 50px;
-  min-width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   font-size: 18px;
   color: rgb(var(--primary-color));
-  background-color: var(--bg-color3);
+  background-color: rgb(var(--primary-color), 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6358,6 +6384,10 @@ Banner end
 
 .contact-message-area {
   background-color: var(--bg-color1);
+  padding: 30px 25px;
+  box-shadow: var(--shadow1);
+  border-radius: 20px;
+  border: 1px solid var(--border-color1);
 }
 .contact-message-area .contact-header {
   margin-bottom: 30px;
@@ -6373,7 +6403,7 @@ Banner end
 }
 
 /*----------------------------------------------
-Contact end
+Contact section end
 ----------------------------------------------*/
 /*----------------------------------------------
 24. Login Signup section start
@@ -6822,9 +6852,6 @@ Policy section end
   justify-content: center;
   align-items: center;
 }
-.error-section .error-content {
-  color: rgb(var(--white));
-}
 .error-section .error-content .error-title {
   font-size: 150px;
   font-family: var(--heading-font);
@@ -7034,7 +7061,9 @@ Product details section start
 }
 
 .product-card {
-  background-color: var(--bg-color2);
+  background-color: var(--bg-color1);
+  border: 1px solid var(--border-color1);
+  box-shadow: var(--shadow1);
   padding: 25px;
   border-radius: 15px;
 }
@@ -7052,7 +7081,7 @@ Product details section start
   color: rgb(var(--heading-color));
 }
 .product-card-item:hover .img-box img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 .product-card-item .img-box {
   width: 60px;
@@ -7060,6 +7089,7 @@ Product details section start
   height: 60px;
   border-radius: 10px;
   overflow: hidden;
+  border: 1px solid var(--border-color1);
 }
 .product-card-item .img-box img {
   border-radius: 10px;
@@ -7175,7 +7205,8 @@ Reviews details section start
   background-color: var(--bg-color1);
 }
 .reviews-details-section .isotop-content {
-  background-color: var(--bg-color2);
+  background-color: var(--bg-color1);
+  border: 1px solid var(--border-color1);
   padding: 25px;
   border-radius: 20px;
   font-size: 16px;

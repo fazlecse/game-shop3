@@ -1725,6 +1725,7 @@ Reusable style section start
 Offcanvas section start 
 ----------------------------------------------*/
 .offcanvas {
+    z-index: 99999;
     .accordion-button {
         font-size: 16px;
         font-weight: 500;
@@ -1991,6 +1992,7 @@ Offcanvas end
     gap: 5px;
 
     &:hover {
+        transition: var(--transition);
         text-decoration: underline;
         gap: 10px;
         background-color: rgb(var(--primary-color), 0.1);
@@ -3133,10 +3135,12 @@ hr.divider:after {
     font-size: 16px;
     background-color: var(--bg-color2);
     border-radius: 9999px;
+    font-weight: 500;
 }
 
 .nice-select .option {
     text-transform: capitalize;
+    font-weight: 500;
 }
 
 .nice-select .option.selected {
@@ -5111,7 +5115,7 @@ Cmn table end
     button {
         padding: 10px 20px;
         border-radius: 5px;
-        font-weight: 400;
+        font-weight: 500;
         background-color: var(--bg-color3);
         box-shadow: var(--shadow1);
         transition: var(--transition);
@@ -5918,25 +5922,24 @@ Bottom Mobile, Tab nav end
     position: relative;
     z-index: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     background-color: rgb(16, 16, 20);
     background-color: rgb(40 40 66);
 
 
     .text-box {
-        padding: 0 4rem;
         width: 100%;
         max-width: 1450px;
         margin: 0 auto;
+        padding: 20px;
 
         .text-box-inner {
-            min-height: 40rem;
             max-width: 600px;
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: start;
-            padding: 4rem 0;
         }
 
         .title {
@@ -5962,10 +5965,10 @@ Bottom Mobile, Tab nav end
     }
 
     .img-box {
-        position: absolute;
+        // position: absolute;
         height: 100%;
         transform-origin: top right;
-        inset-inline-start: calc(64vw - 32rem);
+        // inset-inline-start: calc(64vw - 32rem);
         aspect-ratio: 17/9;
         z-index: -1;
 
@@ -5991,7 +5994,7 @@ Bottom Mobile, Tab nav end
         }
 
         .img-inner {
-            mask-image: linear-gradient(to left, black 0%, black 65%, transparent 100%);
+            // mask-image: linear-gradient(to left, black 0%, black 65%, transparent 100%);
             aspect-ratio: 16/9;
 
             .main-img {
@@ -6031,6 +6034,45 @@ Bottom Mobile, Tab nav end
 }
 
 // Responsive hero section start
+@media(min-width: 768px) {
+    .slider-box {
+        .img-box {
+            inset-inline-start: calc(64vw - 32rem);
+            position: absolute;
+
+            .img-inner {
+                mask-image: linear-gradient(to left, black 0%, black 65%, transparent 100%);
+            }
+        }
+
+        .text-box {
+            padding: 0 4rem;
+
+            .text-box-inner {
+                min-height: 40rem;
+                padding: 4rem 0;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .slider-box {
+        .img-box {
+            .img-inner {
+                -webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
+                mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
+            }
+        }
+
+        .text-box {
+            .text-box-inner {
+                padding: 2rem 0;
+                margin: 0 auto;
+            }
+        }
+    }
+}
 
 @media(min-width:768px) and (max-width: 1199px) {
     .slider-box {
@@ -6065,17 +6107,9 @@ Bottom Mobile, Tab nav end
 
 @media only screen and (max-width: 767px) {
     .slider-box {
-        padding: 20px;
-
         .text-box {
             width: 100%;
         }
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .slider-box {
-        height: 420px;
     }
 }
 
@@ -6259,7 +6293,7 @@ Flash deal section end
 
         h5 {
             font-size: 30px;
-            padding: 15px;
+            padding: 13px;
             background-color: var(--bg-color1);
             border-radius: 12px;
         }
@@ -6650,7 +6684,7 @@ Flash deal section end
 
 .product-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(221px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(217px, 1fr));
     gap: 20px;
 
 }
@@ -6668,16 +6702,17 @@ Flash deal section end
     }
 
     .product-box {
-
         .text-box {
-            .title {
-                font-size: 14px;
-            }
-
             .price .promo-price {
                 font-size: 16px;
             }
         }
+    }
+
+    .product-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
+        gap: 20px;
     }
 }
 
@@ -7233,7 +7268,7 @@ Blog section end
             height: 250px;
             min-width: 250px;
             border-radius: 15px;
-            background-color: var(--bg-color3);
+            background-color: var(--bg-color1);
             padding: 5px;
             object-fit: cover;
         }
@@ -7906,12 +7941,14 @@ Banner end
     background-color: var(--bg-color1);
     position: relative;
     z-index: 0;
+}
 
-    .left-side {
-        .img-box {
-            max-width: 487px;
-            margin: 0 auto;
-        }
+.contact-area {
+    padding: 20px;
+
+    .thumbs-area {
+        max-width: 250px;
+        margin: auto;
     }
 }
 
@@ -7924,19 +7961,19 @@ Banner end
     .item {
         display: flex;
         align-items: center;
-        gap: 20px;
-        padding: 25px;
+        gap: 15px;
+        border: 1px solid var(--border-color1);
+        padding: 10px;
         border-radius: 10px;
-        background-color: var(--bg-color2);
+        box-shadow: var(--shadow1);
 
         .icon-area {
             border-radius: 5px;
-            width: 50px;
-            min-width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             font-size: 18px;
             color: rgb(var(--primary-color));
-            background-color: var(--bg-color3);
+            background-color: rgb(var(--primary-color), 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -7947,6 +7984,10 @@ Banner end
 
 .contact-message-area {
     background-color: var(--bg-color1);
+    padding: 30px 25px;
+    box-shadow: var(--shadow1);
+    border-radius: 20px;
+    border: 1px solid var(--border-color1);
 
     .contact-header {
         margin-bottom: 30px;
@@ -7966,7 +8007,7 @@ Banner end
 }
 
 /*----------------------------------------------
-Contact end
+Contact section end
 ----------------------------------------------*/
 
 /*----------------------------------------------
@@ -8574,7 +8615,6 @@ Policy section end
     align-items: center;
 
     .error-content {
-        color: rgb(var(--white));
 
         .error-title {
             font-size: 150px;
@@ -8829,7 +8869,9 @@ Product details section start
 }
 
 .product-card {
-    background-color: var(--bg-color2);
+    background-color: var(--bg-color1);
+    border: 1px solid var(--border-color1);
+    box-shadow: var(--shadow1);
     padding: 25px;
     border-radius: 15px;
 
@@ -8849,7 +8891,7 @@ Product details section start
 
         .img-box {
             img {
-                transform: scale(1.03);
+                transform: scale(1.05);
             }
         }
     }
@@ -8860,6 +8902,7 @@ Product details section start
         height: 60px;
         border-radius: 10px;
         overflow: hidden;
+        border: 1px solid var(--border-color1);
 
         img {
             border-radius: 10px;
@@ -9012,7 +9055,8 @@ Reviews details section start
     background-color: var(--bg-color1);
 
     .isotop-content {
-        background-color: var(--bg-color2);
+        background-color: var(--bg-color1);
+        border: 1px solid var(--border-color1);
         padding: 25px;
         border-radius: 20px;
         font-size: 16px;

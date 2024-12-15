@@ -563,63 +563,75 @@
         <div class="container">
             <div class="row g-4 g-xxl-5">
                 <div class="col-lg-4">
-                    <div class="sidebar-widget-area">
-                        <h5 class="widget-title">Search</h5>
-                        <div class="search-box">
-                            <input type="text" class="form-control" placeholder="Search here...">
-                            <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
+                    <div class="d-none d-lg-block">
+                        <div class="sidebar-widget-area">
+                            <h5 class="widget-title">Search</h5>
+                            <div class="search-box">
+                                <input type="text" class="form-control" placeholder="Search here...">
+                                <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="sidebar-widget-area">
-                        <h5 class="widget-title">Filter by price</h5>
-                        <div class="range-area">
-                            <input type="text" class="js-range-slider" name="my_range" value="">
+                        <div class="sidebar-widget-area">
+                            <h5 class="widget-title">Filter by price</h5>
+                            <div class="range-area">
+                                <input type="text" class="js-range-slider" name="my_range" value="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="sidebar-widget-area">
-                        <h5 class="widget-title">Categories</h5>
-                        <div class="checkbox-categories-area">
-                            <div class="section-inner">
-                                <div class="categories-list">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckChecked16" />
-                                        <label class="form-check-label" for="flexCheckChecked16"> <span>Carrom
-                                                Pool</span> <span class="">(20)</span> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked9"
-                                            checked />
-                                        <label class="form-check-label" for="flexCheckChecked9"> <span>PUBG</span>
-                                            <span class="">(145)</span> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckChecked10" />
-                                        <label class="form-check-label" for="flexCheckChecked10"> <span>Free Fire</span>
-                                            <span class="">(100)</span> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckChecked11" />
-                                        <label class="form-check-label" for="flexCheckChecked11"> <span>Call Of
-                                                Duty</span>
-                                            <span class="">(319)</span> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckChecked12" />
-                                        <label class="form-check-label" for="flexCheckChecked12"> <span>Mobile Legend
+                        <div class="sidebar-widget-area">
+                            <h5 class="widget-title">Categories</h5>
+                            <div class="checkbox-categories-area">
+                                <div class="section-inner">
+                                    <div class="categories-list">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckChecked16" />
+                                            <label class="form-check-label" for="flexCheckChecked16"> <span>Carrom
+                                                    Pool</span> <span class="">(20)</span> </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckChecked9" checked />
+                                            <label class="form-check-label" for="flexCheckChecked9"> <span>PUBG</span>
+                                                <span class="">(145)</span> </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckChecked10" />
+                                            <label class="form-check-label" for="flexCheckChecked10"> <span>Free
+                                                    Fire</span>
+                                                <span class="">(100)</span> </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckChecked11" />
+                                            <label class="form-check-label" for="flexCheckChecked11"> <span>Call Of
+                                                    Duty</span>
+                                                <span class="">(319)</span> </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckChecked12" />
+                                            <label class="form-check-label" for="flexCheckChecked12"> <span>Mobile
+                                                    Legend
 
-                                            </span> <span class="">(50)</span> </label>
+                                                </span> <span class="">(50)</span> </label>
+                                        </div>
                                     </div>
+
                                 </div>
-
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-lg-8">
+                    <div class="mobile-filter-bar d-lg-none">
+                        <button class="cmn-btn mb-10" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                            <i class="fa-regular fa-filter-list"></i>
+                            Filters
+                        </button>
+                    </div>
                     <div class="row justify-content-between align-items-center gap-2">
                         <div class="col-auto">
                             <h6>04 Items found</h6>
@@ -957,6 +969,73 @@
     <!-- Modal section end -->
 
 
+    <!-- Offcanvas section start -->
+    <!-- product sidebar start -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filters</h5>
+            <button type="button" class="cmn-btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fa-regular fa-arrow-left"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="sidebar-widget-area">
+                <h5 class="widget-title">Search</h5>
+                <div class="search-box">
+                    <input type="text" class="form-control" placeholder="Search here...">
+                    <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
+                </div>
+            </div>
+            <div class="sidebar-widget-area">
+                <h5 class="widget-title">Filter by price</h5>
+                <div class="range-area">
+                    <input type="text" class="js-range-slider" name="my_range" value="">
+                </div>
+            </div>
+            <div class="sidebar-widget-area">
+                <h5 class="widget-title">Categories</h5>
+                <div class="checkbox-categories-area">
+                    <div class="section-inner">
+                        <div class="categories-list">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked16" />
+                                <label class="form-check-label" for="flexCheckChecked16"> <span>Carrom
+                                        Pool</span> <span class="">(20)</span> </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked9"
+                                    checked />
+                                <label class="form-check-label" for="flexCheckChecked9"> <span>PUBG</span>
+                                    <span class="">(145)</span> </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked10" />
+                                <label class="form-check-label" for="flexCheckChecked10"> <span>Free
+                                        Fire</span>
+                                    <span class="">(100)</span> </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked11" />
+                                <label class="form-check-label" for="flexCheckChecked11"> <span>Call Of
+                                        Duty</span>
+                                    <span class="">(319)</span> </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked12" />
+                                <label class="form-check-label" for="flexCheckChecked12"> <span>Mobile
+                                        Legend
+
+                                    </span> <span class="">(50)</span> </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- product sidebar end -->
+    <!-- Offcanvas section end -->
 
 
 

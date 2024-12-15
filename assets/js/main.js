@@ -56,7 +56,7 @@ $(document).ready(function () {
     // product-slider carousel
     $('.flash-sale-carousel').owlCarousel({
         loop: true,
-        // autoplay: true,
+        autoplay: true,
         margin: 20,
         autoplayTimeout: 3000,
         // rtl: true,
@@ -65,7 +65,7 @@ $(document).ready(function () {
         navText: ["<i class='fa-regular fa-angle-left'></i>", "<i class='fa-regular fa-angle-right'></i>"],
         responsive: {
             0: {
-                items: 1,
+                items: 2,
                 nav: false,
                 dots: true,
                 dotsEach: 3
