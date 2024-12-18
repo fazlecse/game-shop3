@@ -589,9 +589,14 @@ span.select2.select2-container.select2-container--default {
 .rtl .select2-container .select2-selection--single .select2-selection__rendered {
   text-align: right;
   width: 100%;
+  padding-right: 0;
+  padding-left: 10px;
 }
 .rtl .select2-container--default .select2-selection--single .select2-selection__arrow b {
   margin-left: -4px;
+}
+.rtl .select2-container--default .select2-selection--single .select2-selection__rendered span {
+  flex-direction: row-reverse;
 }
 
 /*----------------------------------------------
@@ -1413,8 +1418,8 @@ Reusable style section start
   left: auto;
   right: 10px;
 }
-.rtl .select2-container .select2-selection--single,
-.rtl .select2-container .select2-selection--multiple {
+.rtl .multiple-search-box .select2-container .select2-selection--single,
+.rtl .multiple-search-box .select2-container .select2-selection--multiple {
   padding: 0.375rem 25px 0.375rem 15px;
 }
 @media (min-width: 992px) {
@@ -1535,6 +1540,10 @@ Offcanvas end
   background-color: rgb(var(--primary-color), 0.8);
   color: rgb(var(--white));
   gap: 10px;
+}
+
+.rtl .cmn-btn i {
+  transform: rotate(180deg);
 }
 
 .cmn-btn2 {
@@ -1667,6 +1676,10 @@ Offcanvas end
   background-color: rgb(var(--primary-color), 0.1);
   padding: 2px 10px;
   border-radius: 8px;
+}
+
+.rtl .view-all-btn i {
+  transform: rotate(180deg);
 }
 
 .round-btn {
@@ -4862,7 +4875,7 @@ Bottom Mobile, Tab nav end
   transform: translateX(0);
   transition-delay: 1300ms;
 }
-.swiper-slide-active .text-box .kew-btn {
+.swiper-slide-active .text-box .cmn-btn {
   transform: scale(1, 1);
   transition-delay: 1300ms;
 }
@@ -4892,19 +4905,11 @@ Bottom Mobile, Tab nav end
 @media (max-width: 767px) {
   .slider-box .img-box .img-inner {
     -webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
   }
   .slider-box .text-box .text-box-inner {
     padding: 2rem 0;
     margin: 0 auto;
-  }
-}
-@media (min-width: 768px) and (max-width: 1199px) {
-  .slider-box .text-box {
-    width: 80%;
-  }
-  .slider-box .text-box .title {
-    font-size: 36px;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -4919,17 +4924,15 @@ Bottom Mobile, Tab nav end
     font-size: 16px;
   }
 }
-@media only screen and (max-width: 767px) {
-  .slider-box .text-box {
-    width: 100%;
-  }
-}
-.rtl .slider-box::after {
-  transform: rotateY(180deg);
-}
 .rtl .hero-swiper .autoplay-progress {
   right: auto;
   left: 16px;
+}
+@media (min-width: 768px) {
+  .rtl .slider-box .img-box .img-inner {
+    -webkit-mask-image: linear-gradient(to right, black 0%, black 65%, transparent 100%);
+            mask-image: linear-gradient(to right, black 0%, black 65%, transparent 100%);
+  }
 }
 
 /*----------------------------------------------
@@ -5006,6 +5009,11 @@ Exclusive offer section end
   position: absolute;
   top: calc(0% - 100px);
   right: 0;
+}
+
+.rtl .trending-items-carousel .owl-nav {
+  right: auto;
+  left: 0;
 }
 
 /*----------------------------------------------
@@ -5256,6 +5264,7 @@ Flash deal section end
 
 .product-box2 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
   border-radius: 8px;
@@ -5298,12 +5307,6 @@ Flash deal section end
   font-size: 16px;
   font-weight: 600;
   color: rgb(var(--heading-color));
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
 }
 .product-box2 .text-box .name {
   margin-bottom: 0;
@@ -5411,6 +5414,10 @@ Flash deal section end
     grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
     gap: 20px;
   }
+}
+.rtl .flash-sale-carousel .owl-nav {
+  right: auto;
+  left: 0;
 }
 .rtl .trending-offers-carousel .owl-nav {
   right: auto;
@@ -7109,6 +7116,11 @@ Product details section start
   width: 100%;
   height: 100%;
   border-radius: 10px;
+}
+
+.rtl .info-box .info-text {
+  right: auto;
+  left: -10px;
 }
 
 /*----------------------------------------------
