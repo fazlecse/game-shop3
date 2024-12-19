@@ -36,53 +36,30 @@
             </div>
             <!-- Preloader section end -->
 
-            <!-- Bottom Mobile Tab nav section start -->
-            <ul class="nav bottom-nav fixed-bottom d-xl-none">
-                <li class="nav-item">
-                    <a class="nav-link  toggle-sidebar-btn" aria-current="page">
-                        <i class="fa-regular fa-list"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-planet-ringed"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#"><i class="fa-regular fa-house"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a onclick="searchBar()" class="nav-link search-bar-toggle" href="#"><i
-                            class="fa-regular fa-magnifying-glass"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-user"></i></a>
-                </li>
-            </ul>
-            <!-- Bottom Mobile Tab nav section end -->
-
             <!-- Header section start -->
             <header id="header" class="header">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-8">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-8 order-2 order-lg-1">
                             <div class="header-left">
-                                <ul class="nav">
+                                <ul class="nav main-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">
+                                        <a class="nav-link active" aria-current="page" href="user-panel.html">
                                             <i class="fa-regular fa-grid-2"></i>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">
+                                        <a class="nav-link" href="new-order.html">
                                             <i class="fa-regular fa-bag-shopping"></i>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">
+                                        <a class="nav-link" href="user-panel-add-fund.html">
                                             <i class="fa-regular fa-wallet"></i>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">
+                                        <a class="nav-link" href="user-panel-transection.html">
                                             <i class="fa-regular fa-chart-line-up"></i>
                                         </a>
                                     </li>
@@ -114,8 +91,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4">
+                        <div class="col-lg-4 order-1 order-lg-2">
                             <div class="header-nav">
+                                <div class="logo-container d-lg-none">
+                                    <a href="user-panel.html" class="logo d-flex align-items-center">
+                                        <img src="assets/img/logo/logo.png" alt="GAMOT">
+                                    </a>
+                                </div>
                                 <ul class="nav-icons">
                                     <li class="nav-item">
                                         <a id="toggle-btn" class="nav-link d-flex toggle-btn">
@@ -397,6 +379,21 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="card mt-25">
+                                    <div class="card-body">
+                                        <h4 class="mb-20">Referral Link</h4>
+                                        <div class="input-group">
+                                            <input id="referralURL" type="text" class="form-control"
+                                                value="https://dodger-blue-hyip.bugfinder.net/register/demouser"
+                                                aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                                readonly>
+                                            <div class="input-group-text" id="copyBtn"><i
+                                                    class="fa-regular fa-copy"></i>copy
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="row g-4">
@@ -405,29 +402,135 @@
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="card">
-                                            <div class="card-header pb-0 border-0">
+                                            <div
+                                                class="card-header pb-0 border-0 d-flex align-items-center justify-content-between gap-2 ">
                                                 <h4 class="mb-0">Latest offer list</h4>
+                                                <a href="" class="view-all-btn">view all <span><i
+                                                            class="fa-regular fa-angle-right"></i></span></a>
                                             </div>
                                             <div class="card-body">
-                                                <div class="row g-4">
-                                                    <div class="col-12">
-                                                        <div class="offer-list-box">
-                                                            <div class="img-box">
-                                                                <img src="./assets/img/person/1.jpg" alt="">
-                                                            </div>
-                                                            <div class="text-box">
-                                                                <div class="d-flex align-items-center gap-2">
-                                                                    <h5>Stanton Cronin</h5>
-                                                                    <span class="badge text-bg-primary">Accepted</span>
-                                                                </div>
-                                                                <div class="d-flex align-items-center gap-2">
-                                                                    <h5>$88</h5>
-                                                                    <small><i class="fa-regular fa-clock"></i> 5 min
-                                                                        ago</small>
-                                                                </div>
+                                                <div class="d-flex justify-content-between gap-2 flex-wrap">
+                                                    <div class="offer-list-box">
+                                                        <div class="img-box">
+                                                            <img src="./assets/img/person/1.jpg" alt="">
+                                                        </div>
+                                                        <div class="text-box">
+                                                            <h6>Stanton Cronin</h6>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <h6 class="mb-0">$88</h6>
+                                                                <span class="badge text-bg-primary">Accepted</span>
                                                             </div>
                                                         </div>
-                                                        <hr class="cmn-hr2">
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <button class="action-btn-secondary" type="button"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fa-regular fa-ellipsis-stroke-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i
+                                                                        class="text-success fa-regular fa-comment"></i>Conversation</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <hr class="cmn-hr2">
+                                                <div class="d-flex justify-content-between gap-2 flex-wrap">
+                                                    <div class="offer-list-box">
+                                                        <div class="img-box">
+                                                            <img src="./assets/img/person/2.jpg" alt="">
+                                                        </div>
+                                                        <div class="text-box">
+                                                            <h6>Margot Dooley</h6>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <h6 class="mb-0">$88</h6>
+                                                                <span class="badge text-bg-warning">Pending</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <button class="action-btn-secondary" type="button"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fa-regular fa-ellipsis-stroke-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i
+                                                                        class="text-success fa-regular fa-check-circle"></i>Accept</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#apply-modal"><i
+                                                                        class="text-danger fa-regular fa-times-circle"></i>Reject</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#"><i
+                                                                        class="text-danger fa-regular fa-trash"></i>Remove</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <hr class="cmn-hr2">
+                                                <div class="d-flex justify-content-between gap-2 flex-wrap">
+                                                    <div class="offer-list-box">
+                                                        <div class="img-box">
+                                                            <img src="./assets/img/person/3.jpg" alt="">
+                                                        </div>
+                                                        <div class="text-box">
+                                                            <h6>jazib malik</h6>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <h6 class="mb-0">$88</h6>
+                                                                <span class="badge text-bg-primary">Accepted</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <button class="action-btn-secondary" type="button"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fa-regular fa-ellipsis-stroke-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i
+                                                                        class="text-success fa-regular fa-check-circle"></i>Accept</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#apply-modal"><i
+                                                                        class="text-danger fa-regular fa-times-circle"></i>Reject</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#"><i
+                                                                        class="text-danger fa-regular fa-trash"></i>Remove</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <hr class="cmn-hr2">
+                                                <div class="d-flex justify-content-between gap-2 flex-wrap">
+                                                    <div class="offer-list-box">
+                                                        <div class="img-box">
+                                                            <img src="./assets/img/person/4.jpg" alt="">
+                                                        </div>
+                                                        <div class="text-box">
+                                                            <h6>Coralie Eichmann</h6>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <h6 class="mb-0">$88</h6>
+                                                                <span class="badge text-bg-info">Resubmission</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <button class="action-btn-secondary" type="button"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fa-regular fa-ellipsis-stroke-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i
+                                                                        class="text-success fa-regular fa-check-circle"></i>Accept</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#apply-modal"><i
+                                                                        class="text-danger fa-regular fa-times-circle"></i>Reject</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#"><i
+                                                                        class="text-danger fa-regular fa-trash"></i>Remove</a>
+                                                            </li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
@@ -486,25 +589,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <!-- <h4 class="mb-20">Referral Link</h4> -->
-                                                <div class="input-group">
-                                                    <input id="referralURL" type="text" class="form-control"
-                                                        value="https://dodger-blue-hyip.bugfinder.net/register/demouser"
-                                                        aria-label="Recipient's username"
-                                                        aria-describedby="basic-addon2" readonly>
-                                                    <div class="input-group-text" id="copyBtn"><i
-                                                            class="fa-regular fa-copy"></i>copy
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>

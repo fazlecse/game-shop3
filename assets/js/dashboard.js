@@ -173,8 +173,19 @@ $(document).ready(function () {
                         return "$ " + val + " thousands"
                     }
                 }
+            },
+            theme: {
+                mode: 'light', 
+                palette: 'palette1', 
+                monochrome: {
+                    enabled: false,
+                    color: '#255aee',
+                    shadeTo: 'light',
+                    shadeIntensity: 0.65
+                },
             }
         };
+
 
         var chart = new ApexCharts(document.querySelector("#columnChart"), options);
         chart.render();

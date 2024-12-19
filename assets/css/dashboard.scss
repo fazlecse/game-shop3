@@ -26,13 +26,12 @@ Typography
     --orange: #FFC83E;
     --btn-hover-bg: rgb(var(--primary-color), 0.8);
     --delete-btn-hover-bg: #dc4077;
-    --input-color: var(--bg-color1);
+    --input-color: #ffffff;
     --input-color2: #ffffff;
 
     --bg-color1: #ffffff;
     --bg-color2: #F8F6FE;
-    --bg-color3: #050B20;
-    --bg-color4: #EDEEF2;
+    --bg-color3: #EDEEF2;
 
     --border-color1: rgba(231, 234, 243, .7);
     --border-color2: rgba(140, 152, 164, .25);
@@ -48,6 +47,25 @@ Typography
     --moderate-cyan: 69, 198, 168;
     // primary-color: #6f4ff2
 }
+
+/*----------------------------------------------
+Dark theme section start
+----------------------------------------------*/
+.dark-theme {
+    --heading-color: 255, 255, 255;
+    --bg-color1: #181a2d;
+    --bg-color2: #0B0819;
+    --bg-color3: #000000;
+    --border-color1: #2e3347;
+    --border-color2: #3d4153;
+    --body-color: rgba(255, 255, 255, 0.85);
+    --input-color: #181a2d;
+
+}
+
+/*----------------------------------------------
+Dark theme section end
+----------------------------------------------*/
 
 /*----------------------------------------------
 Reset section start
@@ -90,6 +108,8 @@ preloader section start
     display: flex;
     justify-content: center;
     align-items: center;
+    left: 0;
+    top: 0;
 
     img {
         max-width: 150px;
@@ -169,7 +189,7 @@ body {
     color: var(--body-color);
     font-size: 16px;
     overflow-x: hidden;
-    background-color: var(--bg-color4);
+    background-color: var(--bg-color3);
     font-weight: 500;
 }
 
@@ -226,7 +246,7 @@ textarea.form-control {
 }
 
 .dark-theme .form-control:disabled {
-    background-color: var(--bg-color4);
+    background-color: var(--bg-color3);
 }
 
 .form-control:focus,
@@ -234,6 +254,7 @@ textarea.form-control {
     border: 1px solid rgb(var(--primary-color));
     box-shadow: none;
     background-color: var(--bg-color1);
+    color: var(--heading-color);
 }
 
 .form-check label,
@@ -482,7 +503,7 @@ img.img-flag {
     height: 45px;
     display: flex;
     align-items: center;
-    background: rgb(var(--white));
+    background: var(--bg-color1);
     font-size: 15px;
     padding: .375rem 15px;
     border-radius: 10px;
@@ -532,7 +553,7 @@ img.img-flag {
     border-radius: 5px;
     border: 1px solid var(--border-color2);
     outline: 0;
-    background-color: rgb(var(--white));
+    background-color: var(--bg-color1);
     color: rgb(var(--heading-color));
 }
 
@@ -823,6 +844,8 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
     width: 100%;
     border: none;
+    background-color: var(--bg-color1);
+    color: var(--heading-color);
 }
 
 .ui-datepicker-title {
@@ -1427,6 +1450,34 @@ Offcanvas section end
     }
 }
 
+.view-all-btn {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 18px;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 10px;
+
+    &:hover {
+        transition: var(--transition);
+        text-decoration: underline;
+        gap: 10px;
+        background-color: rgb(var(--primary-color), 0.1);
+
+        border-radius: 8px;
+    }
+}
+
+.rtl {
+    .view-all-btn {
+        i {
+            transform: rotate(180deg);
+        }
+    }
+}
+
 // --------------------------------------------------------
 // -- Cmn tab section start --
 // --------------------------------------------------------
@@ -1913,6 +1964,9 @@ hr.divider:after {
         text-transform: capitalize;
         color: rgb(var(--heading-color));
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
         &:focus,
         &:hover {
@@ -1941,7 +1995,7 @@ Cmn table start
 ----------------------------------------------*/
 .cmn-table {
     border-radius: 10px;
-    background: rgb(var(--white));
+    background: var(--bg-color1);
 
     table {
         margin-bottom: 0;
@@ -2214,7 +2268,6 @@ Cmn table start
 // Dark theme cmn table start
 .dark-theme {
     .cmn-table {
-        background-color: var(--bg-color3);
 
         table {
             color: rgb(var(--white));
@@ -2223,7 +2276,6 @@ Cmn table start
                 tr {
                     th {
                         color: rgb(var(--white));
-                        background-color: var(--bg-color5);
                     }
                 }
             }
@@ -2793,14 +2845,6 @@ Chat section start
 }
 
 // Rtl caht seciton end
-// Dark theme chat section start
-.dark-theme {
-    .message-container .chat-box {
-        background-color: var(--bg-color1);
-    }
-}
-
-// Dark theme chat section end
 
 // Message offcanvas section start
 .offcanvas.offcanvas-end {
@@ -3202,18 +3246,15 @@ Padding bottom
     color: rgb(var(--white));
     position: relative;
     z-index: 0;
-    display: flex;
+
     align-items: center;
     border: 1px solid var(--border-color1);
     border-radius: 20px;
     background-color: rgb(var(--primary-color));
     background-image: linear-gradient(90deg, rgb(var(--primary-color)), rgba(117, 47, 187));
 
-
-
     .text-box {
         padding: 30px 30px 30px 40px;
-        width: 60%;
         flex-grow: 1;
 
         .title {
@@ -3255,7 +3296,6 @@ Padding bottom
     }
 
     .img-box {
-        width: 40%;
         max-width: 350px;
         height: 330px;
         display: flex;
@@ -3360,6 +3400,47 @@ Padding bottom
     }
 }
 
+// Responsive offer section start
+@media(min-width: 768px) {
+    .slider-box {
+        display: flex;
+
+        .text-box {
+            width: 60%;
+        }
+
+        .img-box {
+            width: 40%;
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .slider-box {
+        flex-direction: column;
+        gap: 10px;
+
+        .text-box .title {
+            font-size: 26px;
+        }
+    }
+}
+
+@media(max-width: 575px) {
+    .slider-box .text-box {
+        padding: 20px;
+    }
+}
+
+// Responsive offer section end
+// Dark theme offer section start
+.dark-theme {
+    .slider-box .purchases-btn {
+        color: #292d32;
+    }
+}
+
+// Dark theme offer section end
 // offer section end
 
 .dropdown-menu .dropdown-header,
@@ -3548,7 +3629,7 @@ Padding bottom
         width: 70px;
         min-width: 70px;
         height: 70px;
-        background-color: rgb(var(--white));
+        background-color: var(--bg-color1);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -3723,19 +3804,32 @@ Dashboard warpper section start
 }
 
 .dashboard-wrapper {
-    background-color: var(--bg-color4);
-
+    background-color: var(--bg-color3);
 }
 
 .dashboard-container {
     background-color: var(--bg-color2);
-    padding: 80px 0 80px;
-    border-radius: 80px;
+    padding: 20px 0 20px;
+}
+
+@media(min-width: 576px) {
+    .dashboard-wrapper {
+        padding: 20px;
+    }
+
+    .dashboard-container {
+        border-radius: 80px;
+    }
+
 }
 
 @media(min-width: 768px) {
     .dashboard-wrapper {
         padding: 20px;
+    }
+
+    .dashboard-container {
+        padding: 80px 0 80px;
     }
 }
 
@@ -3751,6 +3845,8 @@ Dashboard warpper section start
     }
 }
 
+@media(max-width: 767px) {}
+
 /*----------------------------------------------
 Dashboard warpper section end
 ----------------------------------------------*/
@@ -3761,11 +3857,8 @@ Header section start
 .header {
     transition: var(--transition);
     z-index: 997;
-    background-color: var(--bg-color2);
-    padding: 0 20px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-
 }
 
 .toggle-sidebar .header {
@@ -3781,9 +3874,30 @@ Header section start
 }
 
 .header .search-bar {
-    min-width: 360px;
-    max-width: 400px;
-    padding: 0 20px;
+    max-width: 350px;
+}
+
+.logo {
+    max-width: 120px;
+    min-width: 100px;
+    margin-right: 6px;
+}
+
+.rtl .logo img {
+    margin-right: 0;
+    margin-left: 6px;
+}
+
+.logo span {
+    font-size: 26px;
+    font-weight: 700;
+    color: rgb(var(--heading-color));
+    font-family: "Nunito", sans-serif;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
 }
 
 .header-left {
@@ -3796,56 +3910,65 @@ Header section start
     border-radius: 20px;
 }
 
-.nav {
+.main-nav {
+    gap: 10px;
+
     .nav-link {
         color: rgb(var(--heading-color));
-        font-size: 20px;
-        width: 50px;
-        height: 50px;
+        font-size: 18px;
+        width: 45px;
+        height: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
         transition: var(--transition);
-        gap: 10px;
+
 
         &:hover {
             color: rgb(var(--primary-color));
             background-color: var(--bg-color2);
-            border-radius: 50%;
+        }
+
+        &.active {
+            color: rgb(var(--white));
+            background-color: rgb(var(--primary-color));
         }
     }
 }
 
 // Responsive header section start
+@media(max-width: 1199px) {
+    .header-left {
+        .nav {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--bg-color1);
+            z-index: 9999;
+            justify-content: space-around;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow3);
 
-@media (max-width: 1199px) {
-    .header .search-bar {
-        position: fixed;
-        top: 50px;
-        left: 0;
-        right: 0;
-        padding: 20px;
-        box-shadow: 0px 0px 15px 0px rgba(1, 41, 112, 0.1);
-        background: #ffffff;
-        z-index: 9999;
-        transition: var(--transition);
-        visibility: hidden;
-        opacity: 0;
+            .nav-link {
+                &.active {
+                    margin-top: -22px;
+                }
+            }
+        }
     }
 
-    .header .search-bar-show {
-        top: 60px;
-        visibility: visible;
-        opacity: 1;
+    .header .search-bar {
+        max-width: 100%;
     }
 }
 
-@media(max-width: 575px) {
-    .header {
-        top: 10px;
-        left: 10px;
-        width: calc(100% - 20px);
+@media(max-width: 991px) {
+    .header-left {
+        padding: 10px;
     }
 }
 
@@ -3883,13 +4006,15 @@ Header section start
 }
 
 // Header rtl end
+
 /*----------------------------------------------
 Header section end
 ----------------------------------------------*/
 
+
 .header-nav {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 
     .nav-icons {
         display: flex;
@@ -4002,7 +4127,6 @@ Header section end
             }
 
             i {
-                margin-right: 10px;
                 font-size: 18px;
                 line-height: 0;
             }
@@ -4026,6 +4150,12 @@ Header section end
 }
 
 // Responsive header nav start
+@media(min-width: 992px) {
+    .header-nav {
+        justify-content: end;
+    }
+}
+
 @media(max-width: 575px) {
     .header-nav .nav-icons {
         gap: 10px;
@@ -4397,24 +4527,11 @@ Main section start
     transition: var(--transition);
     min-height: calc(100vh - 132px);
 
-    .pagetitle {
-        margin-bottom: 30px;
-        text-transform: capitalize;
-    }
+   
 
     .breadcrumb {
         justify-content: start;
     }
-}
-
-.main-wrapper {
-    background-color: var(--bg-color2);
-    padding: 100px 30px 30px;
-    max-height: calc(100vh - 40px);
-    min-height: calc(100vh - 40px);
-    border-radius: 30px;
-    overflow: hidden;
-    overflow-y: auto;
 }
 
 // Main responsive start
@@ -4426,28 +4543,14 @@ Main section start
             display: none;
         }
     }
-
-    .main-wrapper {
-        max-height: calc(100vh - 95px);
-        min-height: calc(100vh - 95px);
-    }
 }
-
-@media (max-width: 575px) {
-    .dashboard-wrapper {
-        margin: 10px;
-    }
-
-    .main-wrapper {
-        padding: 100px 10px 10px;
-    }
+.pagetitle {
+    text-transform: capitalize;
 }
-
 // Main responsive end
-
 /*----------------------------------------------
     Card section start
-    ----------------------------------------------*/
+----------------------------------------------*/
 .card {
     border-radius: 25px;
     border: none;
@@ -4547,7 +4650,7 @@ Account settings profile section start
 
             img {
                 border-radius: 8px;
-                border: 2px solid rgb(var(--white));
+                border: 2px solid var(--bg-color1);
                 box-shadow: var(--shadow2);
                 height: 100%;
                 width: 100%;
@@ -5271,8 +5374,8 @@ Map section end
     gap: 10px;
 
     .img-box {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
 
         img {
             width: 100%;
