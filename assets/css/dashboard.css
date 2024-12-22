@@ -1038,6 +1038,9 @@ Offcanvas section end
   -webkit-text-fill-color: transparent;
 }
 
+/*----------------------------------------------
+Cmn btn start
+----------------------------------------------*/
 .cmn-btn {
   background: rgb(var(--primary-color));
   padding: 8px 15px;
@@ -1280,6 +1283,9 @@ Offcanvas section end
   transform: rotate(180deg);
 }
 
+/*----------------------------------------------
+Cmn tab section start
+----------------------------------------------*/
 .cmn-tabs {
   display: flex;
   justify-content: center;
@@ -1430,6 +1436,12 @@ Offcanvas section end
     left: 10px;
   }
 }
+/*----------------------------------------------
+Alerts section end
+----------------------------------------------*/
+/*----------------------------------------------
+rich-text-editor section start
+----------------------------------------------*/
 .richtexteditor.rte-modern {
   border: 1px solid var(--border-color1);
   border-radius: 5px;
@@ -1445,6 +1457,9 @@ Offcanvas section end
     height: 300px;
   }
 }
+/*----------------------------------------------
+rich-text-editor section end
+----------------------------------------------*/
 .video_play_btn {
   position: absolute;
   top: 50%;
@@ -3030,31 +3045,6 @@ Padding bottom
 }
 
 /*----------------------------------------------
-Desktop view card section start
-----------------------------------------------*/
-.desktop-view-card-section {
-  display: none;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  height: 100%;
-}
-
-@media (min-width: 1600px) {
-  .desktop-view-card-section {
-    display: block;
-  }
-  .tab-mobile-view-carousel-section {
-    display: none;
-  }
-}
-/*----------------------------------------------
-Desktop view card section end
-----------------------------------------------*/
-/*----------------------------------------------
 Tab mobile view card section start
 ----------------------------------------------*/
 .carousel-1 {
@@ -3260,7 +3250,7 @@ Header section start
     bottom: 0;
     width: 100%;
     background-color: var(--bg-color1);
-    z-index: 9999;
+    z-index: 990;
     justify-content: space-around;
     height: 55px;
     display: flex;
@@ -4070,156 +4060,6 @@ Payment section start
 /*----------------------------------------------
 Payment section end
 -----------------------------------------------*/
-/*----------------------------------------------
-Chat widget section start
-----------------------------------------------*/
-.chat-widget-section .select2 {
-  width: auto !important;
-  flex-grow: 1;
-}
-.chat-widget-section .title {
-  flex-grow: 1;
-  border: 1px solid var(--border-color1);
-  padding: 10px;
-  height: 45px;
-  border-radius: 5px;
-}
-.chat-widget-section .cmn-btn {
-  height: 45px;
-}
-.chat-widget-section h6 {
-  font-family: var(--heading-font);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.chat-widget-section .card {
-  border-radius: 5px;
-}
-.chat-widget-section .card .card-body {
-  padding: 10px;
-}
-.chat-widget-section .card .card-body .status {
-  text-transform: capitalize;
-}
-.chat-widget-section .textarea-box {
-  position: relative;
-}
-.chat-widget-section .textarea-box:hover .btn-area {
-  opacity: 1;
-  visibility: visible;
-}
-.chat-widget-section .textarea-box .btn-area {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(var(--primary-color), 0.2);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition);
-}
-
-/*----------------------------------------------
-Chat widget section end
-----------------------------------------------*/
-/*----------------------------------------------
-Wideget Section start
-----------------------------------------------*/
-.widget-settings .form-check {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.widget-round {
-  width: 46px;
-  height: 46px;
-  border-radius: 50px;
-  background-color: rgb(var(--primary-color));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(var(--white));
-  font-size: 20px;
-}
-
-.widget-rectangle {
-  width: 100%;
-  height: 46px;
-  background-color: rgb(var(--primary-color));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(var(--white));
-  font-size: 18px;
-  border-radius: 5px;
-  text-transform: capitalize;
-  gap: 5px;
-}
-
-.widget-settings .form-check-label {
-  width: 100%;
-}
-
-.widget-pos-selector-area .form-check-input {
-  display: none;
-}
-.widget-pos-selector-area .widget-pos-selector:nth-child(1) .form-check-label .dot:nth-child(3) {
-  background-color: rgb(var(--primary-color));
-}
-.widget-pos-selector-area .widget-pos-selector:nth-child(2) .form-check-label .dot:nth-child(1) {
-  background-color: rgb(var(--primary-color));
-}
-.widget-pos-selector-area .widget-pos-selector:nth-child(3) .form-check-label .dot:nth-child(6) {
-  background-color: rgb(var(--primary-color));
-}
-.widget-pos-selector-area .widget-pos-selector:nth-child(4) .form-check-label .dot:nth-child(4) {
-  background-color: rgb(var(--primary-color));
-}
-.widget-pos-selector-area .widget-pos-selector:nth-child(5) .form-check-label .dot:nth-child(9) {
-  background-color: rgb(var(--primary-color));
-}
-.widget-pos-selector-area .widget-pos-selector:nth-child(6) .form-check-label .dot:nth-child(7) {
-  background-color: rgb(var(--primary-color));
-}
-.widget-pos-selector-area .form-check-label {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  align-items: center;
-  border-radius: 3px;
-  padding: 1px;
-  border: 1px solid transparent;
-}
-.widget-pos-selector-area .form-check-label:hover {
-  border-color: var(--border-color2);
-}
-.widget-pos-selector-area .form-check-label .dot {
-  width: 10px;
-  height: 10px;
-  border: 1px solid var(--border-color2);
-  margin: 1px;
-}
-.widget-pos-selector-area .form-check-input:checked[type=radio] + .form-check-label {
-  border: 1px solid rgb(var(--primary-color));
-}
-
-.widget-preview-section {
-  height: calc(100% - 30px);
-  min-height: 400px;
-}
-
-/*----------------------------------------------
-Wideget Section end
-----------------------------------------------*/
 /*----------------------------------------------
 Notice card section start
 -----------------------------------------------*/

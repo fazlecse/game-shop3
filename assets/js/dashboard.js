@@ -5,15 +5,6 @@ const preloaderFunction = () => {
     preloader.style.display = "none";
 };
 
-// Toggle sidebar start
-document.querySelectorAll('.toggle-sidebar-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        document.body.classList.toggle("toggle-sidebar");
-    });
-});
-// Toggle sidebar end
-
-
 // Tooltip
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
@@ -52,33 +43,6 @@ function formatState(state) {
 
 
 $(document).ready(function () {
-    // owl carousel dashboard card
-    $('.carousel-1').owlCarousel({
-        loop: true,
-        // autoplay: true,
-        margin: -20,
-        nav: false,
-        dots: false,
-        // rtl:true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            375: {
-                items: 2
-            },
-            576: {
-                items: 3
-            },
-            768: {
-                items: 4
-            },
-            992: {
-                items: 3
-            }
-        }
-    });
-
     // offer slider start
     const progressCircle = document.querySelector(".autoplay-progress svg");
     const progressContent = document.querySelector(".autoplay-progress span");
@@ -191,73 +155,8 @@ $(document).ready(function () {
         chart.render();
 
     }
-
-    // 
-
-
-    // Piechart
-    if ($('#pieChart').length) {
-        var options = {
-            series: [44, 55, 13, 33],
-            chart: {
-                type: 'donut',
-                height: '300'
-            },
-            dataLabels: {
-                enabled: false
-            },
-            legend: {
-                position: 'right',
-                offsetY: 0,
-                height: 230,
-            }
-        };
-
-        var chart = new ApexCharts(document.querySelector("#pieChart"), options);
-        chart.render();
-    }
     // Apexcharts end
 
-    // Circle progress start
-    if ($('.circle').length) {
-        $('.first.circle').circleProgress({
-            value: 0.90,
-            size: 70,
-            fill: {
-                gradient: ["#6f4ff2"]
-            }
-        }).on('circle-animation-progress', function (event, progress) {
-            $(this).find('span').html(Math.round(90 * progress) + '<i>%</i>');
-            $(this).find('span').addClass('percent');
-        });
-
-    }
-    if ($('.circle').length) {
-        $('.second.circle').circleProgress({
-            value: 0.60,
-            size: 70,
-            fill: {
-                gradient: ["#6f4ff2"]
-            }
-        }).on('circle-animation-progress', function (event, progress) {
-            $(this).find('span').html(Math.round(60 * progress) + '<i>%</i>');
-            $(this).find('span').addClass('percent');
-        });
-
-    }
-    if ($('.circle').length) {
-        $('.third.circle').circleProgress({
-            value: 0.30,
-            size: 70,
-            fill: {
-                gradient: ["#6f4ff2"]
-            }
-        }).on('circle-animation-progress', function (event, progress) {
-            $(this).find('span').html(Math.round(30 * progress) + '<i>%</i>');
-            $(this).find('span').addClass('percent');
-        });
-    }
-    // Circle progress start
 
 });
 
