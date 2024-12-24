@@ -36,6 +36,23 @@
             </div>
             <!-- Preloader section end -->
 
+            <div class="custom-sidebar">
+                <div class="radio-input">
+                    <label class="label">
+                        <input type="radio" id="value-1" checked="" name="value-radio" value="value-1" />
+                        <p class="text">Dark</p>
+                    </label>
+                    <label class="label">
+                        <input type="radio" id="value-2" name="value-radio" value="value-2" />
+                        <p class="text">Light</p>
+                    </label>
+                </div>
+                <button type="button" class="toggle-sidebar-btn">
+                    <i class="fa-regular fa-gear"></i>
+                </button>
+            </div>
+
+
             <!-- Header section start -->
             <header id="header" class="header">
                 <div class="container">
@@ -707,7 +724,25 @@
                 }, 1000)
             }
         })
+        // custom sidebar
+        const customSidebar = document.querySelector('.custom-sidebar');
+        const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+        customSidebar.addEventListener('click', () => {
+            customSidebar.style.backgroundColor = 'red';
+        })
+        toggleSidebarBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            customSidebar.classList.toggle('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (!customSidebar.contains(e.target) && !toggleSidebarBtn.contains(e.target)) {
+                customSidebar.classList.remove('active');
+            }
+        });
+
     </script>
+
 
 
 
